@@ -1,0 +1,49 @@
+@import '../../../../Styles/vars';
+
+.main {
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  align-items: center;
+  @media screen and (max-width: 768px) {
+    padding: 20px;
+    gap: 50px;
+    justify-items: center;
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+  }
+}
+
+.main__info {
+  max-width: 400px;
+}
+
+.main__company {
+  @include text(16px, 21px, 400px);
+  color: $blue-main;
+  margin-bottom: 15px;
+}
+
+.main__title {
+  @include text(46px, 56px, 700);
+  margin-bottom: 20px;
+  @media screen and (max-width: 992px) {
+    @include text(32px, 44px, 700);
+    margin-bottom: 10px;
+  }
+}
+.main__subtitle {
+  @include text(20px, 35px, 400);
+  margin-bottom: 50px;
+  @media screen and (max-width: 992px) {
+    @include text(16px, 24px, 400);
+    margin-bottom: 30px;
+  }
+}
+
+.main__object {
+  max-width: 700px;
+  max-height: 500px;
+  & > object {
+    max-width: 100%;
+  }
+}

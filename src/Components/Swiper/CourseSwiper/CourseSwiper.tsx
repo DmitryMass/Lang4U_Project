@@ -18,7 +18,7 @@ const CourseSwiper = () => {
         <Button
           children='Всі курси'
           route={ROUTES_COURSE.allCourses}
-          modificator={styles.course__courses}
+          modificator={'course__courses'}
         />
       </div>
       <Swiper
