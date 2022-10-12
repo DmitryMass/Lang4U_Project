@@ -1,0 +1,26 @@
+@import '../../../../../Styles/vars';
+
+.item__obj {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  @include flex-container(center, center, nowrap);
+  margin-bottom: 15px;
+}
+.item__violet {
+  background: $violet-opacity;
+}
+.item__red {
+  background: $red-opacity;
+}
+.item__yellow {
+  background: $yellow-opacity;
+}
+.item__blue {
+  background: $blue-opacity;
+}
+
+.item__title {
+  @include text(18px, 24px, 700);
+  margin-bottom: 5px;
+}

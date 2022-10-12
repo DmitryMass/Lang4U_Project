@@ -1,0 +1,71 @@
+@import '../../../../Styles/vars';
+
+.forWhom {
+  @include flex-container(space-between, flex-start, nowrap);
+  padding: 60px 0;
+  gap: 20px;
+  position: relative;
+  @media screen and (max-width: 768px) {
+    @include flex-container(flex-start, center, wrap);
+    gap: 60px;
+    padding: 30px 0;
+  }
+}
+
+.forWhom__nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 400px));
+  gap: 40px;
+
+  @media screen and (max-width: 576px) {
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+  }
+}
+
+.forWhom__info {
+  max-width: 335px;
+}
+
+.forWhom__title {
+  @include text(32px, 100%, 600);
+  @media screen and (max-width: 768px) {
+    @include text(21px, 26px, 600);
+  }
+  @media screen and (max-width: 576px) {
+    @include text(16px, 24px, 600);
+  }
+}
+
+.forWhom__subtitle {
+  @include text(32px, 100%, 700);
+  @media screen and (max-width: 768px) {
+    @include text(21px, 26px, 600);
+  }
+  @media screen and (max-width: 576px) {
+    @include text(16px, 24px, 600);
+    margin-bottom: 10px;
+  }
+  color: $blue-main;
+  margin-bottom: 25px;
+}
+
+.forWhom__text {
+  @include text(18px, 24px, 400);
+  margin-bottom: 40px;
+  @media screen and (max-width: 576px) {
+    @include text(16px, 24px, 400);
+    margin-bottom: 20px;
+  }
+}
+.text__span {
+  color: $blue-main;
+}
+
+.forWhom__question {
+  position: absolute;
+  top: 0;
+  left: 0;
+  & > object {
+    max-width: 100%;
+  }
+}

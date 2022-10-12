@@ -18,6 +18,7 @@ $red-active: #be1c1f;
 $red-main: #e42125;
 $red-hover: #e84649;
 $red-border: #f19092;
+$red-opacity: #f6b5b6;
 
 //Green Palette
 $green: #21e434;
@@ -25,6 +26,7 @@ $green-active: #1cbe2b;
 $green-main: #21e434;
 $green-hover: #46e856;
 $green-border: #90f199;
+$green-opacity: #b5f6bb;
 
 //Dark-green Palette
 $dark-green: #2aaa37;
@@ -32,6 +34,7 @@ $dark-green-active: #238e2e;
 $dark-green-main: #2aaa37;
 $dark-green-hover: #4eb858;
 $dark-green-border: #94d49b;
+$dark-green-opacity: #b8e3bc;
 
 // Blue - Palette
 $blue: #2e90d1;
@@ -39,8 +42,10 @@ $blue-active: #2678ae;
 $blue-main: #2e90d1;
 $blue-hover: #51a2d9;
 $blue-border: #96c7e8;
+$blue-opacity: #b9daf0;
 
 $blue-violet: #7c7cff;
+$violet-opacity: #d2b6d9;
 
 // yellow palette
 $yellow: #fece00;
@@ -48,6 +53,7 @@ $yellow-active: #d4ac00;
 $yellow-main: #fece00;
 $yellow-hover: #fed62b;
 $yellow-border: #fee680;
+$yellow-opacity: #ffefaa;
 
 // mixins
 @mixin container($width, $pd) {
