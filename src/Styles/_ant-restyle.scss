@@ -1,5 +1,25 @@
 @import './vars';
 
+// Swiper => CoursesSwiper => HomePage
+.swiper-pagination {
+  position: relative;
+  bottom: 0;
+  margin-top: 40px;
+}
+
 .swiper-slide {
   @include flex-container(center, center, nowrap);
+}
+
+.swiper-pagination-bullet {
+  background: #bb92c6;
+  width: 10px;
+  height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #78258d;
+  width: 10px;
+  height: 10px;
+  position: relative;
 }

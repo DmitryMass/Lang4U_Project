@@ -12,6 +12,7 @@ export const ROUTES = {
 };
 
 export const ROUTES_COURSE = {
+  allCourses: '/allcourses',
   engEasy: '/easyeng',
   engMiddle: '/middleeng',
   engHigh: '/higheng',

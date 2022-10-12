@@ -5,11 +5,24 @@ import { FreeMode, Pagination } from 'swiper';
 import styles from './course-swiper.module.scss';
 import { coursesList } from '../../Constants/Courses/courses';
 import CourseSwiperItem from './CourseSwiperItem/CourseSwiperItem';
+import Button from '../../Button/Button';
+import { ROUTES_COURSE } from '../../Constants/Routes/routes';
 
 const CourseSwiper = () => {
   return (
     <section className={styles.course__swiper}>
+      <div className={styles.course__wrapper}>
+        <h2 className={styles.course__title}>
+          Курси іноземної мови для будь-якого рівня
+        </h2>
+        <Button
+          children='Всі курси'
+          route={ROUTES_COURSE.allCourses}
+          modificator={styles.course__courses}
+        />
+      </div>
       <Swiper
+        grabCursor={true}
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -33,7 +46,7 @@ const CourseSwiper = () => {
         className='mySwiper'
       >
         {coursesList.map((elem) => (
-          <SwiperSlide>
+          <SwiperSlide key={elem.title}>
             <CourseSwiperItem item={elem} />
           </SwiperSlide>
         ))}

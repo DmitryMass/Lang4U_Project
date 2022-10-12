@@ -1,9 +1,9 @@
 @import '../../../../Styles/vars';
 
 .course__box {
-  max-height: 325px;
+  min-height: 240px;
   width: 450px;
-  padding: 30px;
+  padding: 25px;
   border-radius: 8px;
 }
 .course__blue {
@@ -24,8 +24,36 @@
   height: 35px;
 }
 
-.swiper-pagination {
-  position: relative;
-  bottom: 0;
-  margin-top: 40px;
+.course__title {
+  @include text(16px, 113%, 700);
+  color: $black;
+  margin: 15px 0;
+}
+.course__info {
+  margin-bottom: 20px;
+}
+
+.course__modules,
+.course__duration {
+  @include text(16px, 113%, 400);
+  color: $black;
+}
+.course__duration {
+  margin-bottom: 3px;
+}
+
+.course__price {
+  @include flex-container(space-between, center, wrap);
+}
+
+.course__link {
+  @include text(16px, 24px, 600);
+  @include flex-container(center, center, nowrap);
+  gap: 10px;
+
+  color: $blue-violet;
+  padding: 8px 0;
+  &:hover {
+    color: $white;
+  }
 }

@@ -1,3 +1,4 @@
+import { ArrowRightOutlined } from '@ant-design/icons';
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { ICoursesList } from '../../../../Types/courses-list-types';
@@ -21,17 +22,20 @@ const CourseSwiperItem: FC<ICourseItemProps> = ({ item }) => {
           aria-label='flag'
         />
       </div>
-      <h3>{title}</h3>
-      <div>
-        <p>
+      <h3 className={'course__title'}>{title}</h3>
+      <div className={'course__info'}>
+        <p className={'course__duration'}>
           Тривалість: <span>{duration}</span>
         </p>
-        <p>
+        <p className={'course__modules'}>
           Модулей: <span>{modules}</span>
         </p>
       </div>
-      <div>
-        <Link to={link}>{details}</Link>
+      <div className={'course__price'}>
+        <Link className={'course__link'} to={link}>
+          {details}
+          <ArrowRightOutlined />
+        </Link>
         <p>{price}</p>
       </div>
     </div>
