@@ -1,0 +1,31 @@
+@import '../../../../Styles/vars';
+
+.course__box {
+  max-height: 325px;
+  width: 450px;
+  padding: 30px;
+  border-radius: 8px;
+}
+.course__blue {
+  background-color: $blue-border;
+}
+.course__orange {
+  background-color: $orange-border;
+}
+.course__green {
+  background-color: $green-border;
+}
+.course__red {
+  background-color: $red-border;
+}
+
+.course__logo {
+  width: 35px;
+  height: 35px;
+}
+
+.swiper-pagination {
+  position: relative;
+  bottom: 0;
+  margin-top: 40px;
+}

@@ -1,0 +1,5 @@
+@import './vars';
+
+.swiper-slide {
+  @include flex-container(center, center, nowrap);
+}

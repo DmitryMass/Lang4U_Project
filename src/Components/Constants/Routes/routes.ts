@@ -10,3 +10,18 @@ export const ROUTES = {
   ALLLANG: '/alllanguages',
   REVIEWS: '/reviews',
 };
+
+export const ROUTES_COURSE = {
+  engEasy: '/easyeng',
+  engMiddle: '/middleeng',
+  engHigh: '/higheng',
+  germanEasy: '/easygerman',
+  germanMiddle: '/middlegerman',
+  germanHigh: '/highgerman',
+  chinaEasy: '/easychina',
+  chinaMiddle: '/middlechina',
+  chinaHigh: '/highchina',
+  spainEasy: '/easyspain',
+  spainMiddle: '/middlespain',
+  spainHigh: '/highspain',
+};
