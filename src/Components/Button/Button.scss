@@ -1,0 +1,22 @@
+@import '../../Styles/vars';
+
+.header__login,
+.burger__login {
+  @include text(16px, 24px, 500);
+  @include border(none, 8px);
+  background-color: $yellow-hover;
+  padding: 12px 18px;
+  transition: all 0.2s ease-in-out;
+  color: $black;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background-color: $yellow-main;
+    color: $black;
+  }
+}
+
+.header__login {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}

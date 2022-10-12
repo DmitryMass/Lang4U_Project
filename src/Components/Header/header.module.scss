@@ -1,0 +1,25 @@
+@import '../../Styles/vars';
+
+.header {
+  @include flex-container(space-between, center, nowrap);
+  padding: 5px 0px;
+}
+
+.navigation__container {
+  @include flex-container(center, center, nowrap);
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+.header__navigation {
+  @include flex-container(center, center, nowrap);
+  gap: 70px;
+}
+.header__container {
+  @include container(1800px, 25px);
+}
+
+.nav__header {
+  @include flex-container(center, center, nowrap);
+  gap: 5px;
+}

@@ -1,0 +1,5 @@
+@import '../../Styles/vars';
+
+.home__container {
+  @include container(1800px, 25px);
+}

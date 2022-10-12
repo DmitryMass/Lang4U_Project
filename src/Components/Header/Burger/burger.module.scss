@@ -1,0 +1,23 @@
+@import '../../../Styles/vars';
+
+.burger {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
+.burger__menu {
+  @include flex-container(center, center, nowrap);
+  flex-direction: column;
+}
+
+.burger__nav {
+  @include flex-container(center, center, nowrap);
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.ant-modal-header {
+  background-color: $blue-violet;
+}

@@ -1,0 +1,33 @@
+@import '../../../Styles/vars';
+
+.footer__bottom {
+  min-height: 40px;
+  padding: 10px 0;
+  background-color: $black-main;
+}
+.bottom__container {
+  @include container(1440px, 25px);
+}
+
+.bottom__flex {
+  @include flex-container(space-between, center, wrap);
+  gap: 10px;
+  @media screen and (max-width: 576px) {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.bottom__title,
+.bottom__rights {
+  @include text(14px, 113%, 400);
+  letter-spacing: 0.01em;
+  opacity: 0.8;
+  color: $white;
+}
+.bottom__rights {
+  &:hover {
+    opacity: 1;
+    color: $white;
+  }
+}

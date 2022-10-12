@@ -1,0 +1,12 @@
+@import '../../../Styles/vars';
+
+.footer__link {
+  @include text(16px, 24px, 500);
+  color: $white;
+  opacity: 0.8;
+  letter-spacing: 0.02em;
+  &:hover {
+    color: $white;
+    opacity: 1;
+  }
+}

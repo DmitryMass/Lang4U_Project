@@ -1,0 +1,44 @@
+@import '../../../Styles/vars';
+
+.footer__contacts {
+  @media screen and (max-width: 992px) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  @media screen and (max-width: 576px) {
+    grid-column-start: auto;
+    grid-column-end: auto;
+    grid-row-start: auto;
+    grid-row-end: auto;
+  }
+}
+.contacts {
+  &__title,
+  &__number,
+  &__email,
+  &__address {
+    letter-spacing: 0.01em;
+    color: $white;
+  }
+}
+
+.contacts__title {
+  @include text(22px, 113%, 700);
+  margin-bottom: 18px;
+}
+.contacts__number {
+  @include text(18px, 113%, 700);
+  margin-bottom: 15px;
+}
+
+.contacts {
+  &__email,
+  &__address {
+    @include text(16px, 113%, 400);
+  }
+}
+.contacts__email {
+  margin-bottom: 15px;
+}

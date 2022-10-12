@@ -1,0 +1,76 @@
+// сolors :
+$black: #000000;
+$black-main: #232323;
+$white: #ffffff;
+
+// Grey - Palette
+$grey: #e3e3e3;
+$grey-active: #bdbdbd;
+$grey-main: #e3e3e3;
+$grey-hover: #e8e8e8;
+$grey-border: #f1f1f1;
+
+// Red - Palette
+$red: #e42125;
+$red-active: #be1c1f;
+$red-main: #e42125;
+$red-hover: #e84649;
+$red-border: #f19092;
+
+//Green Palette
+$green: #21e434;
+$green-active: #1cbe2b;
+$green-main: #21e434;
+$green-hover: #46e856;
+$green-border: #90f199;
+
+//Dark-green Palette
+$dark-green: #2aaa37;
+$dark-green-active: #238e2e;
+$dark-green-main: #2aaa37;
+$dark-green-hover: #4eb858;
+$dark-green-border: #94d49b;
+
+// Blue - Palette
+$blue: #2e90d1;
+$blue-active: #2678ae;
+$blue-main: #2e90d1;
+$blue-hover: #51a2d9;
+$blue-border: #96c7e8;
+
+$blue-violet: #7c7cff;
+
+// yellow palette
+$yellow: #fece00;
+$yellow-active: #d4ac00;
+$yellow-main: #fece00;
+$yellow-hover: #fed62b;
+$yellow-border: #fee680;
+
+// mixins
+@mixin container($width, $pd) {
+  max-width: $width;
+  padding: 0 $pd;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+
+@mixin flex-container($jc, $ai, $wrap) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-wrap: $wrap;
+}
+
+@mixin text($fs, $lh, $fw) {
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: $fw;
+}
+
+@mixin border($border, $px) {
+  border: $border;
+  border-radius: $px;
+}
+
+// mediaquery- общие
