@@ -26,3 +26,8 @@ export const ROUTES_COURSE = {
   spainMiddle: '/middlespain',
   spainHigh: '/highspain',
 };
+
+export const ROUTE_POLICY = {
+  privacePolicy: '/policy',
+  agreement: '/useragreement',
+};

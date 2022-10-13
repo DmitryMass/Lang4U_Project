@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import FirstLesson from '../../Components/FirstLesson/FirstLesson';
 import ForWhom from '../../Components/PageComponents/Home/ForWhom/ForWhom';
 import MainInfo from '../../Components/PageComponents/Home/MainInfo/MainInfo';
 import CourseSwiper from '../../Components/Swiper/CourseSwiper/CourseSwiper';
@@ -12,6 +13,7 @@ const Home: FC = () => {
         <MainInfo />
         <CourseSwiper />
         <ForWhom />
+        <FirstLesson />
       </div>
     </div>
   );

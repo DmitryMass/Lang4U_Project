@@ -13,7 +13,7 @@ const ForWhom: FC = () => {
   return (
     <section className={styles.forWhom}>
       <div className={styles.forWhom__question}>
-        <object data={question} type='' />
+        <object data={question} type='' aria-label='question' />
       </div>
       <div className={styles.forWhom__info}>
         <h3 className={styles.forWhom__title}>Кому підійде</h3>

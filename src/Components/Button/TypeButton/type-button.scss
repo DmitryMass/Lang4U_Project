@@ -1,0 +1,15 @@
+@import '../../../Styles/vars';
+
+// Home page (section FirstLesson);
+.button__lesson {
+  @include border(none, 8px);
+  @include text(16px, 21px, 400);
+  padding: 13.5px 20px;
+  background: $blue-hover;
+  color: $white;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: $blue-main;
+  }
+}
