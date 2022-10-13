@@ -1,0 +1,58 @@
+@import '../../../../Styles/vars';
+
+.methodology {
+  margin: 40px 0;
+  padding: 25px;
+  background: $red-peach;
+  border-radius: 8px;
+  width: 100%;
+  @include flex-container(space-around, center, nowrap);
+  row-gap: 30px;
+  @media screen and (max-width: 992px) {
+    @include flex-container(center, center, wrap);
+    flex-direction: column-reverse;
+  }
+}
+
+.methodology__img {
+  max-width: 350px;
+  & > img {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+
+.methodology__info {
+  max-width: 500px;
+  @media screen and (max-width: 992px) {
+    max-width: 350px;
+  }
+}
+.methodology__title {
+  @include text(32px, 36px, 600);
+  margin-bottom: 20px;
+  @media screen and (max-width: 992px) {
+    @include text(21px, 26px, 600);
+  }
+  @media screen and (max-width: 576px) {
+    @include text(16px, 24px, 600);
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+.methodology__company {
+  background: -webkit-linear-gradient(#6760ff, #ff177e);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.methodology__list {
+  @include text(16px, 21px, 400);
+  list-style: '\1F4D8 ';
+  margin: 15px 0px 0px 15px;
+  padding-left: 5px;
+  @media screen and (max-width: 576px) {
+    @include text(14px, 18px, 400);
+  }
+}
