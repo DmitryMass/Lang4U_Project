@@ -1,0 +1,64 @@
+@import '../../../../Styles/vars';
+
+.boxes__container {
+  @include flex-container(space-between, center, nowrap);
+  flex-direction: column;
+  gap: 35px;
+  max-width: 400px;
+  width: 100%;
+  @media screen and (max-width: 576px) {
+    gap: 15px;
+  }
+}
+.box {
+  width: 100%;
+  background-color: $blue-violet;
+  padding: 35px 40px;
+  border-radius: 20px;
+  @include flex-container(flex-start, flex-start, nowrap);
+  gap: 25px;
+  @media screen and (max-width: 576px) {
+    padding: 20px 25px;
+    gap: 15px;
+  }
+}
+
+.box__title {
+  @include text(18px, 24px, 600);
+  margin-bottom: 5px;
+  color: $white;
+  @media screen and (max-width: 576px) {
+    @include text(16px, 24px, 600);
+  }
+}
+.box__number,
+.box__link {
+  @include text(16px, 18px, 400);
+  color: $white;
+  @media screen and (max-width: 576px) {
+    @include text(14px, 21px, 400);
+  }
+}
+.box__object {
+  width: 40px;
+  height: 40px;
+}
+
+.box__link {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: underline;
+  transition: all 0.2s ease;
+  &:hover {
+    transition: all 0.2s ease;
+    text-decoration: none;
+    transform: scale(1.1);
+    color: $white;
+  }
+}
+
+//  wrapper messengers
+.box__messengers {
+  margin-top: -20px;
+  padding-top: 10px;
+}
