@@ -11,6 +11,7 @@ import Header from './Header/Header';
 import styles from './App.module.scss';
 import Contacts from './PageComponents/Contacts/Contacts';
 import Support from '../Pages/Support/Support';
+import Tabs from './Breadcrumb/Tabs';
 
 const App: FC = () => {
   return (
@@ -22,6 +23,7 @@ const App: FC = () => {
           </div>
         </BackTop>
         <Header />
+        <Tabs />
         <Routes>
           <Route path={ROUTES.HOME} element={<Home />} />
           <Route />

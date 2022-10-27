@@ -7,8 +7,8 @@ import Nav from '../../../Navigation/Nav';
 import ForWhomItem from './ForWhomItem/ForWhomItem';
 
 import question from '../../../../Assets/Icons/question.svg';
-import styles from './for-whom.module.scss';
 import MainTitle from '../../../Text/Titles/MainTitle';
+import styles from './for-whom.module.scss';
 
 const ForWhom: FC = () => {
   return (

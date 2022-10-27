@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 
 import SupportForm from '../../../Form/Support/SupportForm';
 import styles from './contacts-form.module.scss';
@@ -19,4 +19,4 @@ const ContactsForm: FC = () => {
   );
 };
 
-export default ContactsForm;
+export default memo(ContactsForm);

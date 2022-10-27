@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import MainTitle from '../../Text/Titles/MainTitle';
 import ContactBoxes from './ContactBoxes/ContactBoxes';
 import ContactsForm from './ContactsForm/ContactsForm';
 
 import styles from './contacts.module.scss';
 
-const Contacs: FC = () => {
+const Contacts: FC = () => {
   return (
     <section className={styles.contacts}>
       <div className={styles.contacts__container}>
@@ -24,4 +24,4 @@ const Contacs: FC = () => {
   );
 };
 
-export default Contacs;
+export default memo(Contacts);
