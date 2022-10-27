@@ -28,18 +28,7 @@
     max-width: 350px;
   }
 }
-.methodology__title {
-  @include text(32px, 36px, 600);
-  margin-bottom: 20px;
-  @media screen and (max-width: 992px) {
-    @include text(21px, 26px, 600);
-  }
-  @media screen and (max-width: 576px) {
-    @include text(16px, 24px, 600);
-    margin-bottom: 10px;
-    text-align: center;
-  }
-}
+
 .methodology__company {
   background: -webkit-linear-gradient(#6760ff, #ff177e);
   background-clip: text;

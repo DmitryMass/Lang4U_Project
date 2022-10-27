@@ -26,16 +26,6 @@
   max-width: 335px;
 }
 
-.forWhom__title {
-  @include text(32px, 100%, 600);
-  @media screen and (max-width: 768px) {
-    @include text(21px, 26px, 600);
-  }
-  @media screen and (max-width: 576px) {
-    @include text(16px, 24px, 600);
-  }
-}
-
 .forWhom__subtitle {
   @include text(32px, 100%, 700);
   @media screen and (max-width: 768px) {
@@ -65,6 +55,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: -1;
   & > object {
     max-width: 100%;
   }

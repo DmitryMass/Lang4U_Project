@@ -1,15 +1,16 @@
 import React, { FC } from 'react';
+import MainTitle from '../../Text/Titles/MainTitle';
 import ContactBoxes from './ContactBoxes/ContactBoxes';
+import ContactsForm from './ContactsForm/ContactsForm';
 
 import styles from './contacts.module.scss';
-import ContactsForm from './ContactsForm/ContactsForm';
 
 const Contacs: FC = () => {
   return (
     <section className={styles.contacts}>
       <div className={styles.contacts__container}>
         <div className={styles.contacts__info}>
-          <h1 className={styles.contacts__title}>Контакти</h1>
+          <MainTitle modificator='contacts__title'>Контакти</MainTitle>
           <p className={styles.contacts__subtitle}>
             Ми на зв'язку у будь-який зручний час
           </p>

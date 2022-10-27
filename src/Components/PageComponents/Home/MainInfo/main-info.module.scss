@@ -23,19 +23,6 @@
   margin-bottom: 15px;
 }
 
-.main__title {
-  @include text(46px, 56px, 700);
-  margin-bottom: 20px;
-  @media screen and (max-width: 992px) {
-    @include text(32px, 44px, 700);
-    margin-bottom: 10px;
-  }
-
-  @media screen and (max-width: 576px) {
-    @include text(28px, 36px, 700);
-    margin-bottom: 10px;
-  }
-}
 .main__subtitle {
   @include text(20px, 35px, 400);
   margin-bottom: 50px;

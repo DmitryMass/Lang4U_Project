@@ -17,18 +17,6 @@
   }
 }
 
-.faqSection__title {
-  @include text(32px, 36px, 600);
-  margin-bottom: 30px;
-
-  @media screen and (max-width: 992px) {
-    @include text(21px, 26px, 600);
-  }
-  @media screen and (max-width: 576px) {
-    @include text(16px, 24px, 600);
-    margin-bottom: 20px;
-  }
-}
 .faqSection__answer {
   @media screen and (max-width: 768px) {
     @include flex-container(center, center, wrap);

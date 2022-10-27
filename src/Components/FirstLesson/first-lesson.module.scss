@@ -16,18 +16,6 @@
 .lesson__free {
   max-width: 500px;
 }
-.lesson__title {
-  @include text(32px, 42px, 600);
-  margin-bottom: 10px;
-  @media screen and (max-width: 992px) {
-    @include text(21px, 26px, 600);
-  }
-  @media screen and (max-width: 576px) {
-    @include text(16px, 24px, 600);
-    text-align: center;
-    max-width: 320px;
-  }
-}
 
 .lesson__emailBox {
   position: relative;

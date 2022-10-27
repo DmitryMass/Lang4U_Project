@@ -9,6 +9,7 @@ export const ROUTES = {
   ABOUTUS: '/aboutus',
   ALLLANG: '/alllanguages',
   REVIEWS: '/reviews',
+  SUPPORT: '/support',
 };
 
 export const ROUTES_COURSE = {

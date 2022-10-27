@@ -3,9 +3,10 @@ import { Collapse } from 'antd';
 
 import faq from '../../Assets/Images/faq.png';
 
-import styles from './faq-section.module.scss';
 import Button from '../Button/Button';
 import { ROUTES } from '../Constants/Routes/routes';
+import MainTitle from '../Text/Titles/MainTitle';
+import styles from './faq-section.module.scss';
 
 interface IFAQ {
   id: string;
@@ -19,9 +20,9 @@ const FaqSection: FC = () => {
     <section className={styles.faqSection}>
       <div className={styles.faqSection__box}>
         <div className={styles.faqSection__answer}>
-          <h2 className={styles.faqSection__title}>
+          <MainTitle modificator='faqSection__title'>
             Відповідаємо на часті запитання
-          </h2>
+          </MainTitle>
           <Button
             modificator={'main__free'}
             route={ROUTES.CONTACTS}

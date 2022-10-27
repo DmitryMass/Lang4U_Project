@@ -4,10 +4,11 @@ import { Formik, Field } from 'formik';
 import { emailValidation } from '../Form/ValidationScheme/ValidationScheme';
 
 import lesson from '../../Assets/Images/lesson.jpg';
-import styles from './first-lesson.module.scss';
 import TypeButton from '../Button/TypeButton/TypeButton';
 import { Link } from 'react-router-dom';
 import { ROUTE_POLICY } from '../Constants/Routes/routes';
+import MainTitle from '../Text/Titles/MainTitle';
+import styles from './first-lesson.module.scss';
 
 interface IInitalState {
   email: string;
@@ -23,10 +24,10 @@ const FirstLesson: FC = () => {
   return (
     <section className={styles.lesson}>
       <div className={styles.lesson__free}>
-        <h2 className={styles.lesson__title}>
+        <MainTitle modificator='lesson__title'>
           Безкоштовний урок від Lang4U. Вкажіть свою пошту і ми надішлемо
           деталі.
-        </h2>
+        </MainTitle>
         <Formik
           initialValues={{ email: '', rules: false }}
           onSubmit={formikHandleSubmit}

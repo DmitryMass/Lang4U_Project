@@ -4,11 +4,6 @@
   max-width: 900px;
   width: 100%;
 }
-.form__inputWrapper {
-  @include flex-container(space-between, center, nowrap);
-  gap: 10px;
-  margin-bottom: 20px;
-}
 
 .form__title {
   @include text(24px, 32px, 600);
@@ -22,69 +17,4 @@
   @media screen and (max-width: 992px) {
     @include text(14px, 24px, 400);
   }
-}
-
-.form__name,
-.form__email,
-.form__message {
-  width: 100%;
-  border-radius: 8px;
-  border: none;
-  background-color: $grey-border;
-  padding: 15px;
-  &:focus {
-    box-shadow: inset 0 0 2px $blue-violet, inset 0 0 2px $blue-violet,
-      inset 0 0 2px $blue-violet;
-  }
-}
-
-.name__label,
-.email__label {
-  @include flex-container(flex-start, flex-start, nowrap);
-  @include text(18px, 24px, 500);
-  flex-direction: column;
-  gap: 7px;
-  @media screen and (max-width: 992px) {
-    @include text(16px, 24px, 500);
-  }
-  @media screen and (max-width: 576px) {
-    @include text(14px, 21px, 500);
-  }
-}
-
-.name__box,
-.email__box {
-  width: 100%;
-  position: relative;
-  padding-top: 20px;
-  margin-top: 10px;
-}
-
-.name__error,
-.email__error {
-  color: $red;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.form__message {
-  resize: none;
-  height: 150px;
-  margin-top: 7px;
-  margin-bottom: 25px;
-}
-
-.message__label {
-  margin-bottom: 7px;
-  @include text(18px, 24px, 500);
-  @media screen and (max-width: 992px) {
-    @include text(16px, 24px, 500);
-  }
-  @media screen and (max-width: 576px) {
-    @include text(14px, 21px, 500);
-  }
-}
-.message__span {
-  opacity: 0.5;
 }

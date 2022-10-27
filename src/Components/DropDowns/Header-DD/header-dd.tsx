@@ -20,16 +20,16 @@ const menu = (
       {
         key: '2',
         label: (
-          <Link className={styles.dropdown__link} to={ROUTES.CONTACTS}>
-            Контакти
+          <Link className={styles.dropdown__link} to={ROUTES.PAYMENT}>
+            Умови оплати
           </Link>
         ),
       },
       {
         key: '3',
         label: (
-          <Link className={styles.dropdown__link} to={ROUTES.PAYMENT}>
-            Умови оплати
+          <Link className={styles.dropdown__link} to={ROUTES.SUPPORT}>
+            Підтримка
           </Link>
         ),
       },

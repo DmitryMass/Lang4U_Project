@@ -2,19 +2,20 @@ import React, { memo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination } from 'swiper';
 
-import styles from './course-swiper.module.scss';
 import { coursesList } from '../../Constants/Courses/courses';
 import CourseSwiperItem from './CourseSwiperItem/CourseSwiperItem';
 import Button from '../../Button/Button';
 import { ROUTES_COURSE } from '../../Constants/Routes/routes';
+import MainTitle from '../../Text/Titles/MainTitle';
+import styles from './course-swiper.module.scss';
 
 const CourseSwiper = () => {
   return (
     <section className={styles.course__swiper}>
       <div className={styles.course__wrapper}>
-        <h2 className={styles.course__title}>
+        <MainTitle modificator='courses__title'>
           Курси іноземної мови для будь-якого рівня
-        </h2>
+        </MainTitle>
         <Button
           children='Всі курси'
           route={ROUTES_COURSE.allCourses}

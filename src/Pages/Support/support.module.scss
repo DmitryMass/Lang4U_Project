@@ -1,0 +1,25 @@
+@import '../../Styles/vars';
+
+.support {
+  padding: 60px 0;
+}
+
+.support__container {
+  @include container(1380px, 25px);
+  @include flex-container(space-between, flex-start, nowrap);
+  gap: 30px;
+  @media screen and (max-width: 768px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.support__objectWrapper {
+  max-width: 370px;
+  & > object {
+    max-width: 100%;
+  }
+  @media screen and (max-width: 992px) {
+    max-width: 340px;
+  }
+}

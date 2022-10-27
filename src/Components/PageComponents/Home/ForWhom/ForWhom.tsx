@@ -8,6 +8,7 @@ import ForWhomItem from './ForWhomItem/ForWhomItem';
 
 import question from '../../../../Assets/Icons/question.svg';
 import styles from './for-whom.module.scss';
+import MainTitle from '../../../Text/Titles/MainTitle';
 
 const ForWhom: FC = () => {
   return (
@@ -16,7 +17,7 @@ const ForWhom: FC = () => {
         <object data={question} type='' aria-label='question' />
       </div>
       <div className={styles.forWhom__info}>
-        <h3 className={styles.forWhom__title}>Кому підійде</h3>
+        <MainTitle modificator='forWhom__title'>Кому підійде</MainTitle>
         <p className={styles.forWhom__subtitle}>Lang4U</p>
         <p className={styles.forWhom__text}>
           <span className={styles.text__span}>Lang4U</span> підійде всім, хто
