@@ -14,6 +14,7 @@ import Support from '../Pages/Support/Support';
 import Tabs from './Breadcrumb/Tabs';
 import Faq from '../Pages/FAQ/Faq';
 import About from '../Pages/AboutUs/About';
+import Courses from '../Pages/Courses/Courses';
 
 const App: FC = () => {
   return (
@@ -28,7 +29,7 @@ const App: FC = () => {
         <Tabs />
         <Routes>
           <Route path={ROUTES.HOME} element={<Home />} />
-          <Route />
+          <Route path={ROUTES.COURSES} element={<Courses />} />
           <Route path={ROUTES.ABOUTUS} element={<About />} />
           <Route path={ROUTES.CONTACTS} element={<Contacts />} />
           <Route path={ROUTES.SUPPORT} element={<Support />} />

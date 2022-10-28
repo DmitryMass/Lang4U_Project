@@ -1,7 +1,7 @@
 import { ArrowRightOutlined } from '@ant-design/icons';
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { ICoursesList } from '../../../../Types/courses-list-types';
+import ICoursesList from '../../../../Types/courses-list-types';
 
 import './course-swiper-item.scss';
 

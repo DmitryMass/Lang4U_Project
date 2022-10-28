@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './nav.scss';
+
 interface INavProps<T> {
   modificator: string;
   items: T[];

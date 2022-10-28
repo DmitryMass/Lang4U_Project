@@ -2,7 +2,7 @@ import spain from '../../../Assets/Icons/spain.svg';
 import engl from '../../../Assets/Icons/english.svg';
 import china from '../../../Assets/Icons/china.svg';
 import german from '../../../Assets/Icons/german.svg';
-import { ICoursesList } from '../../../Types/courses-list-types';
+import ICoursesList from '../../../Types/courses-list-types';
 import { ROUTES_COURSE } from '../Routes/routes';
 
 export const coursesList: ICoursesList[] = [

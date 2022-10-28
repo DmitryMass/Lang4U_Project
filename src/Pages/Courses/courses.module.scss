@@ -1,0 +1,16 @@
+@import '../../Styles/vars';
+
+.filter {
+  @include container(1380px, 25px);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.filterPanel {
+  padding: 15px 0;
+  @include flex-container(center, center, wrap);
+  gap: 10px;
+}
+
+.filter__titleWrapper {
+  text-align: center;
+}

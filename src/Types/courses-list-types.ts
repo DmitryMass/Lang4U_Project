@@ -1,4 +1,4 @@
-export interface ICoursesList {
+export default interface ICoursesList {
   logo: string;
   title: string;
   duration: string;
