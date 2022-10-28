@@ -6,7 +6,9 @@ import aboutThird from '../../Assets/Images/about-third.png';
 import MainTitle from '../../Components/Text/Titles/MainTitle';
 
 import AboutUsItem from './AboutUsItem/AboutUsItem';
+import FirstLesson from '../../Components/FirstLesson/FirstLesson';
 import styles from './about.module.scss';
+import Teachers from './Teachers/Teachers';
 
 export interface IAbout {
   title: string;
@@ -21,9 +23,13 @@ const About: FC = () => {
       <div className={styles.about__container}>
         <MainTitle modificator='contacts__title'>Про нас</MainTitle>
         <p className={styles.about__subtitle}>Говори легко – живи вільно!</p>
-        {about.map((item) => {
-          return <AboutUsItem key={item.title} item={item} />;
-        })}
+        <div className={styles.about__info}>
+          {about.map((item) => {
+            return <AboutUsItem key={item.title} item={item} />;
+          })}
+        </div>
+        <Teachers />
+        <FirstLesson />
       </div>
     </section>
   );
