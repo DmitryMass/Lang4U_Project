@@ -1,0 +1,75 @@
+@import '../../../Styles/vars';
+
+.item {
+  @include flex-container(space-between, center, nowrap);
+  gap: 20px;
+  margin-bottom: 30px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 70px;
+  }
+  @media screen and (max-width: 576px) {
+    margin-bottom: 30px;
+  }
+}
+.item:nth-child(2n) {
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+}
+
+.item__info {
+  max-width: 650px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 15px;
+  }
+}
+.item__img {
+  min-width: 580px;
+  height: 300px;
+  @include flex-container(center, center, nowrap);
+  & > img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  @media screen and (max-width: 1200px) {
+    min-width: 480px;
+  }
+  @media screen and (max-width: 992px) {
+    min-width: 400px;
+  }
+  @media screen and (max-width: 576px) {
+    min-width: 300px;
+  }
+}
+
+.item__title {
+  @include text(32px, 36px, 600);
+  margin-bottom: 10px;
+
+  @media screen and (max-width: 992px) {
+    @include text(21px, 26px, 600);
+  }
+  @media screen and (max-width: 576px) {
+    @include text(16px, 24px, 600);
+  }
+}
+.item__span {
+  @include text(32px, 100%, 700);
+  color: $blue-main;
+  @media screen and (max-width: 992px) {
+    @include text(21px, 26px, 600);
+  }
+  @media screen and (max-width: 576px) {
+    @include text(16px, 24px, 600);
+  }
+}
+
+.item__description {
+  @include text(18px, 28px, 400);
+  @media screen and (max-width: 992px) {
+    @include text(14px, 26px, 400);
+  }
+}

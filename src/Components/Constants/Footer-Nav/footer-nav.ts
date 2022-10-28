@@ -3,7 +3,7 @@ import { ROUTES } from '../Routes/routes';
 
 export const footerEducation: IFooterEducation[] = [
   {
-    link: ROUTES.ALLLANG,
+    link: ROUTES.COURSES,
     title: 'Всі мови',
   },
   {

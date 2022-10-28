@@ -1,0 +1,14 @@
+@import '../../Styles/vars';
+
+.faq__container {
+  @include container(1380px, 25px);
+  padding: 30px 25px;
+}
+
+.faq__subtitle {
+  @include text(20px, 35px, 400);
+  margin-bottom: 20px;
+  @media screen and (max-width: 992px) {
+    @include text(14px, 26px, 400);
+  }
+}

@@ -12,6 +12,8 @@ import styles from './App.module.scss';
 import Contacts from './PageComponents/Contacts/Contacts';
 import Support from '../Pages/Support/Support';
 import Tabs from './Breadcrumb/Tabs';
+import Faq from '../Pages/FAQ/Faq';
+import About from '../Pages/AboutUs/About';
 
 const App: FC = () => {
   return (
@@ -27,9 +29,10 @@ const App: FC = () => {
         <Routes>
           <Route path={ROUTES.HOME} element={<Home />} />
           <Route />
-          <Route />
+          <Route path={ROUTES.ABOUTUS} element={<About />} />
           <Route path={ROUTES.CONTACTS} element={<Contacts />} />
           <Route path={ROUTES.SUPPORT} element={<Support />} />
+          <Route path={ROUTES.FAQ} element={<Faq />} />
         </Routes>
       </div>
       <Footer />
