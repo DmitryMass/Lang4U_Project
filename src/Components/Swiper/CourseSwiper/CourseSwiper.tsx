@@ -5,7 +5,7 @@ import { FreeMode, Pagination } from 'swiper';
 import { coursesList } from '../../Constants/Courses/courses';
 import CourseSwiperItem from './CourseSwiperItem/CourseSwiperItem';
 import Button from '../../Button/Button';
-import { ROUTES_COURSE } from '../../Constants/Routes/routes';
+import { ROUTES } from '../../Constants/Routes/routes';
 import MainTitle from '../../Text/Titles/MainTitle';
 import styles from './course-swiper.module.scss';
 
@@ -18,7 +18,7 @@ const CourseSwiper = () => {
         </MainTitle>
         <Button
           children='Всі курси'
-          route={ROUTES_COURSE.allCourses}
+          route={ROUTES.COURSES}
           modificator={'course__courses'}
         />
       </div>

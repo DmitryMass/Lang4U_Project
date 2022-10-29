@@ -11,6 +11,7 @@ const Tabs: FC = () => {
   const breadCrumbView = () => {
     const { pathname: name } = location;
     const pathname = name.replace(/%20/gi, ' ');
+
     const pathnames = pathname.split('/').filter((item) => item);
     const capatilize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
     return (
@@ -40,20 +41,6 @@ const Tabs: FC = () => {
   };
 
   return <>{breadCrumbView()}</>;
-  // return (
-  //   <div >
-  //     <Breadcrumb>
-  //       <Breadcrumb.Item>
-  //         <Link to={'/'}>
-  //           <HomeOutlined />
-  //         </Link>
-  //       </Breadcrumb.Item>
-  //       <Breadcrumb.Item>{currentPage}</Breadcrumb.Item>
-  //       {/* <Breadcrumb.Item></Breadcrumb.Item>
-  //     <Breadcrumb.Item></Breadcrumb.Item> */}
-  //     </Breadcrumb>
-  //   </div>
-  // );
 };
 
 export default Tabs;

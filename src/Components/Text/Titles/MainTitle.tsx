@@ -10,9 +10,9 @@ interface IMainTitle {
 
 const MainTitle: FC<IMainTitle> = ({ children, modificator, span }) => {
   return (
-    <h1 className={`title ${modificator}`}>
+    <h2 className={`title ${modificator}`}>
       {children} {span}
-    </h1>
+    </h2>
   );
 };
 
