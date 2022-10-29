@@ -1,0 +1,16 @@
+@import '../../../Styles/vars';
+
+.item__container {
+  @include container(1380px, 25px);
+  padding: 30px 25px;
+}
+
+.item__course {
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 400px;
+}
+.item__logo {
+  width: 60px;
+  height: 60px;
+}

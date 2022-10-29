@@ -10,22 +10,23 @@ export const ROUTES = {
   ALLLANG: '/alllanguages',
   REVIEWS: '/reviews',
   SUPPORT: '/support',
+  COURSESITEM: '/courses/:id',
 };
 
 export const ROUTES_COURSE = {
   allCourses: '/allcourses',
-  engEasy: '/easyeng',
-  engMiddle: '/middleeng',
-  engHigh: '/higheng',
-  germanEasy: '/easygerman',
-  germanMiddle: '/middlegerman',
-  germanHigh: '/highgerman',
-  chinaEasy: '/easychina',
-  chinaMiddle: '/middlechina',
-  chinaHigh: '/highchina',
-  spainEasy: '/easyspain',
-  spainMiddle: '/middlespain',
-  spainHigh: '/highspain',
+  engEasy: 'elementary English',
+  engMiddle: 'intermediate English',
+  engHigh: 'advanced English',
+  germanEasy: 'elementary German',
+  germanMiddle: 'intermediate German',
+  germanHigh: 'advanced German',
+  chinaEasy: 'elementary China',
+  chinaMiddle: 'intermediate China',
+  chinaHigh: 'advanced China',
+  spainEasy: 'elementary Spain',
+  spainMiddle: 'itermediate Spain',
+  spainHigh: 'advanced Spain',
 };
 
 export const ROUTE_POLICY = {

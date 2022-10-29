@@ -1,7 +1,8 @@
-import { ArrowRightOutlined } from '@ant-design/icons';
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { ArrowRightOutlined } from '@ant-design/icons';
 import ICoursesList from '../../../../Types/courses-list-types';
+import { ROUTES } from '../../../Constants/Routes/routes';
 
 import './course-swiper-item.scss';
 
@@ -12,6 +13,7 @@ interface ICourseItemProps {
 const CourseSwiperItem: FC<ICourseItemProps> = ({ item }) => {
   const { details, duration, logo, modules, price, title, color, link } = item;
 
+  const navigate = useNavigate();
   return (
     <div className={`course__box ${color}`}>
       <div>
@@ -32,10 +34,13 @@ const CourseSwiperItem: FC<ICourseItemProps> = ({ item }) => {
         </p>
       </div>
       <div className={'course__price'}>
-        <Link className={'course__link'} to={link}>
+        <div
+          className={'course__link'}
+          onClick={() => navigate(`${ROUTES.COURSES}/${link}`)}
+        >
           {details}
           <ArrowRightOutlined />
-        </Link>
+        </div>
         <p>{price}</p>
       </div>
     </div>

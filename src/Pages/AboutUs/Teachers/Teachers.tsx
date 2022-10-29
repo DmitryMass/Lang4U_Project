@@ -26,7 +26,7 @@ const Teachers: FC = () => {
       </div>
       <div className={styles.teacher__box}>
         {teachersBox.map((item) => (
-          <div className={styles.teacher__about}>
+          <div key={item.teacher} className={styles.teacher__about}>
             <div className={styles.teacher__img}>
               <img src={item.img as string} alt='teacher' />
             </div>

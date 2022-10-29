@@ -7,4 +7,8 @@ export default interface ICoursesList {
   price: string;
   color: string;
   link: string;
+  lessons?: string;
+  task?: string;
+  tests?: string;
+  expert?: string;
 }

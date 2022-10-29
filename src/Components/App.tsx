@@ -15,6 +15,7 @@ import Tabs from './Breadcrumb/Tabs';
 import Faq from '../Pages/FAQ/Faq';
 import About from '../Pages/AboutUs/About';
 import Courses from '../Pages/Courses/Courses';
+import CoursesItem from '../Pages/Courses/CoursesItem/CoursesItem';
 
 const App: FC = () => {
   return (
@@ -34,6 +35,7 @@ const App: FC = () => {
           <Route path={ROUTES.CONTACTS} element={<Contacts />} />
           <Route path={ROUTES.SUPPORT} element={<Support />} />
           <Route path={ROUTES.FAQ} element={<Faq />} />
+          <Route path={ROUTES.COURSESITEM} element={<CoursesItem />} />
         </Routes>
       </div>
       <Footer />

@@ -9,7 +9,8 @@ import { ROUTES } from '../Constants/Routes/routes';
 const Tabs: FC = () => {
   const location = useLocation();
   const breadCrumbView = () => {
-    const { pathname } = location;
+    const { pathname: name } = location;
+    const pathname = name.replace(/%20/gi, ' ');
     const pathnames = pathname.split('/').filter((item) => item);
     const capatilize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
     return (
@@ -28,7 +29,7 @@ const Tabs: FC = () => {
             return isLast ? (
               <Breadcrumb.Item key={name}>{capatilize(name)}</Breadcrumb.Item>
             ) : (
-              <Breadcrumb.Item>
+              <Breadcrumb.Item key={name}>
                 <Link to={`${routeTo}`}>{capatilize(name)}</Link>
               </Breadcrumb.Item>
             );
