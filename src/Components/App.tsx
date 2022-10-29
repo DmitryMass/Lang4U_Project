@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { ROUTES } from './Constants/Routes/routes';
 import { BackTop } from 'antd';
 import { UpOutlined } from '@ant-design/icons';
@@ -16,8 +16,14 @@ import About from '../Pages/AboutUs/About';
 import Courses from '../Pages/Courses/Courses';
 import CoursesItem from '../Pages/Courses/CoursesItem/CoursesItem';
 import styles from './App.module.scss';
+import { useEffect } from 'react';
 
 const App: FC = () => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [location]);
+
   return (
     <div className={styles.app}>
       <div className={styles.app__container}>

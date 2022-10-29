@@ -17,7 +17,7 @@ const Button: FC<IButtonProps> = ({
   handleClick,
 }) => {
   return (
-    <Link className={modificator} to={route} onClick={handleClick}>
+    <Link to={route} className={modificator} onClick={handleClick}>
       {children}
     </Link>
   );
