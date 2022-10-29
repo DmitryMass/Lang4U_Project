@@ -1,7 +1,7 @@
 @import '../../../Styles/vars';
 
 .item__container {
-  @include container(1380px, 25px);
+  @include container(1380px, 15px);
   padding: 30px 25px;
 }
 

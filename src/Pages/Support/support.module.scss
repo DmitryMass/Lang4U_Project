@@ -8,7 +8,7 @@
 }
 
 .support__container {
-  @include container(1380px, 25px);
+  @include container(1380px, 15px);
   @include flex-container(space-between, flex-start, nowrap);
   gap: 30px;
   @media screen and (max-width: 768px) {

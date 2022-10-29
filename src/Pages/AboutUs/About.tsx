@@ -7,8 +7,8 @@ import MainTitle from '../../Components/Text/Titles/MainTitle';
 
 import AboutUsItem from './AboutUsItem/AboutUsItem';
 import FirstLesson from '../../Components/FirstLesson/FirstLesson';
-import styles from './about.module.scss';
 import Teachers from './Teachers/Teachers';
+import styles from './about.module.scss';
 
 export interface IAbout {
   title: string;

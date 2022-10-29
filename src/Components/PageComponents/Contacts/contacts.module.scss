@@ -7,7 +7,7 @@
   }
 }
 .contacts__container {
-  @include container(1360px, 25px);
+  @include container(1360px, 15px);
 }
 .contacts__wrapper {
   @include flex-container(space-between, inherit, nowrap);

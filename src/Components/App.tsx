@@ -8,7 +8,6 @@ import Home from '../Pages/Home/Home';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
 
-import styles from './App.module.scss';
 import Contacts from './PageComponents/Contacts/Contacts';
 import Support from '../Pages/Support/Support';
 import Tabs from './Breadcrumb/Tabs';
@@ -16,6 +15,7 @@ import Faq from '../Pages/FAQ/Faq';
 import About from '../Pages/AboutUs/About';
 import Courses from '../Pages/Courses/Courses';
 import CoursesItem from '../Pages/Courses/CoursesItem/CoursesItem';
+import styles from './App.module.scss';
 
 const App: FC = () => {
   return (
