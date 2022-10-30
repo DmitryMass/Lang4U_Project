@@ -17,9 +17,10 @@ import Courses from '../Pages/Courses/Courses';
 import CoursesItem from '../Pages/Courses/CoursesItem/CoursesItem';
 import Login from '../Pages/Auth/Login/Login';
 
-import styles from './App.module.scss';
 import Registration from '../Pages/Auth/Registration/Registration';
+import NotFound from './NotFound/NotFound';
 
+import styles from './App.module.scss';
 const App: FC = () => {
   const location = useLocation();
   useEffect(() => {
@@ -46,6 +47,7 @@ const App: FC = () => {
           <Route path={ROUTES.COURSESITEM} element={<CoursesItem />} />
           <Route path={ROUTES.LOGIN} element={<Login />} />
           <Route path={ROUTES.REGISTRATION} element={<Registration />} />
+          <Route path={ROUTES.NOTFOUND} element={<NotFound />} />
         </Routes>
       </div>
       <Footer />

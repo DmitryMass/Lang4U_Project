@@ -11,6 +11,7 @@ export const ROUTES = {
   REVIEWS: '/reviews',
   SUPPORT: '/support',
   COURSESITEM: '/courses/:id',
+  NOTFOUND: '/*',
 };
 
 export const ROUTES_COURSE = {
