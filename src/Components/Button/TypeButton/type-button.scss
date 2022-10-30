@@ -2,7 +2,8 @@
 
 // Home page (section FirstLesson);
 .button__lesson,
-.button__contacts {
+.button__contacts,
+.auth__btn {
   @include border(none, 8px);
   @include text(16px, 21px, 400);
   padding: 13.5px 20px;
@@ -15,7 +16,8 @@
   }
 }
 
-.button__contacts {
+.button__contacts,
+.auth__btn {
   background: $yellow-hover;
   color: $black;
   font-weight: 500;
@@ -45,4 +47,8 @@
   background: $yellow-opacity;
   color: $black;
   cursor: inherit;
+}
+
+.auth__btn {
+  width: 100%;
 }

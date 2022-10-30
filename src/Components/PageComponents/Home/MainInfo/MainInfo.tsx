@@ -25,7 +25,7 @@ const MainInfo = () => {
         />
       </div>
       <div className={styles.main__object}>
-        <object data={homelogo} type='' aria-label='main-picture' />
+        <img src={homelogo} alt='homelogo' />
       </div>
     </main>
   );
