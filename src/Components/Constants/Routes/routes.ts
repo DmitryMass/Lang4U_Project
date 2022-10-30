@@ -7,10 +7,10 @@ export const ROUTES = {
   LOGIN: '/login',
   REGISTRATION: '/registration',
   ABOUTUS: '/about',
-  ALLLANG: '/alllanguages',
   REVIEWS: '/reviews',
   SUPPORT: '/support',
   COURSESITEM: '/courses/:id',
+  USERPAGE: '/personal',
   NOTFOUND: '/*',
 };
 

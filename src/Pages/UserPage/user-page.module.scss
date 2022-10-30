@@ -1,0 +1,12 @@
+@import '../../Styles/vars';
+
+.userpage {
+  padding-top: 60px;
+  @include flex-container(center, flex-start, nowrap);
+}
+
+.trigger {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 5px;
+}

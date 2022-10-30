@@ -21,6 +21,8 @@ import Registration from '../Pages/Auth/Registration/Registration';
 import NotFound from './NotFound/NotFound';
 
 import styles from './App.module.scss';
+import UserPage from '../Pages/UserPage/UserPage';
+
 const App: FC = () => {
   const location = useLocation();
   useEffect(() => {
@@ -48,6 +50,7 @@ const App: FC = () => {
           <Route path={ROUTES.LOGIN} element={<Login />} />
           <Route path={ROUTES.REGISTRATION} element={<Registration />} />
           <Route path={ROUTES.NOTFOUND} element={<NotFound />} />
+          <Route path={ROUTES.USERPAGE} element={<UserPage />} />
         </Routes>
       </div>
       <Footer />
