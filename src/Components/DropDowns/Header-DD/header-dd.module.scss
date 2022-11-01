@@ -34,3 +34,12 @@
     width: 100%;
   }
 }
+
+.dropdown__title {
+  font-size: 14px;
+  color: #000000;
+}
+.dropdown__burger {
+  @include text(16px, 24px, 500);
+  color: #000000;
+}

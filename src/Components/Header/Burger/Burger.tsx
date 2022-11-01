@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { MenuUnfoldOutlined } from '@ant-design/icons';
 import { Modal } from 'antd';
 import { headerLinks } from '../../Constants/Header-Nav/header-links';
 import { ROUTES } from '../../Constants/Routes/routes';
 import Button from '../../Button/Button';
-import HeaderDD from '../../DropDowns/Header-DD/header-dd';
 import Nav from '../../Navigation/Nav';
 import HeaderNavItem from '../Header-Nav/HeaderNavItem';
 
@@ -15,7 +14,7 @@ import useLogout from '../../hooks/useLogout';
 import useModal from '../../hooks/modal';
 import { useDispatch } from 'react-redux';
 
-const Burger = () => {
+const Burger: FC = () => {
   const dispatch = useDispatch();
   const { handleCancel, isModalOpen, showModal } = useModal();
   const { user } = useTypedSelector((state) => state.userToken);
@@ -33,7 +32,6 @@ const Burger = () => {
         open={isModalOpen}
       >
         <div className={styles.burger__menu}>
-          <HeaderDD />
           <Nav
             modificator={styles.burger__nav}
             items={headerLinks}
@@ -50,7 +48,10 @@ const Burger = () => {
               children={'Вийти'}
               modificator={'burger__login'}
               route={ROUTES.HOME}
-              handleClick={handleLogout}
+              handleClick={() => {
+                handleLogout();
+                dispatch(handleCancel());
+              }}
             />
           ) : (
             <Button

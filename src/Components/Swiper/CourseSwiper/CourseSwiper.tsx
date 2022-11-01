@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Pagination } from 'swiper';
+import { FreeMode, Autoplay } from 'swiper';
 
 import { coursesList } from '../../Constants/Courses/courses';
 import CourseSwiperItem from './CourseSwiperItem/CourseSwiperItem';
@@ -23,7 +23,12 @@ const CourseSwiper = () => {
         />
       </div>
       <Swiper
+        loop={true}
         grabCursor={true}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -40,10 +45,7 @@ const CourseSwiper = () => {
         }}
         spaceBetween={60}
         freeMode={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[FreeMode, Pagination]}
+        modules={[FreeMode, Autoplay]}
         className='mySwiper'
       >
         {coursesList.map((elem) => (

@@ -5,23 +5,19 @@ import { ROUTES } from '../../Constants/Routes/routes';
 import { DownOutlined } from '@ant-design/icons';
 
 import styles from './header-dd.module.scss';
-import useModal from '../../hooks/modal';
-import { useDispatch } from 'react-redux';
 
-const HeaderDD: FC = () => {
-  const dispatch = useDispatch();
-  const { handleCancel } = useModal();
+interface IHeaderDD {
+  type: boolean;
+}
+
+const HeaderDD: FC<IHeaderDD> = ({ type }) => {
   const menu = (
     <Menu
       items={[
         {
           key: '1',
           label: (
-            <Link
-              to={ROUTES.FAQ}
-              onClick={() => dispatch(handleCancel())}
-              className={styles.dropdown__link}
-            >
+            <Link to={ROUTES.FAQ} className={styles.dropdown__link}>
               FAQ
             </Link>
           ),
@@ -29,11 +25,7 @@ const HeaderDD: FC = () => {
         {
           key: '2',
           label: (
-            <Link
-              to={ROUTES.PAYMENT}
-              onClick={() => dispatch(handleCancel())}
-              className={styles.dropdown__link}
-            >
+            <Link to={ROUTES.PAYMENT} className={styles.dropdown__link}>
               Умови оплати
             </Link>
           ),
@@ -41,11 +33,7 @@ const HeaderDD: FC = () => {
         {
           key: '3',
           label: (
-            <Link
-              to={ROUTES.SUPPORT}
-              onClick={() => dispatch(handleCancel())}
-              className={styles.dropdown__link}
-            >
+            <Link to={ROUTES.SUPPORT} className={styles.dropdown__link}>
               Підтримка
             </Link>
           ),
@@ -55,12 +43,16 @@ const HeaderDD: FC = () => {
   );
 
   return (
-    <Dropdown overlay={menu} placement={'bottomLeft'}>
+    <Dropdown overlay={menu} placement={'bottomLeft'} trigger={['click']}>
       <div
         className={styles.dropdown__header}
         onClick={(e) => e.preventDefault()}
       >
-        <Space>Ще</Space>
+        <Space
+          className={type ? styles.dropdown__burger : styles.dropdown__title}
+        >
+          Також
+        </Space>
         <DownOutlined />
       </div>
     </Dropdown>

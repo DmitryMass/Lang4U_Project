@@ -30,10 +30,13 @@ const Header: FC = () => {
                 <HeaderNavItem elem={item} key={item.link} />
               )}
             />
-            <HeaderDD />
+            <HeaderDD type={true} />
           </div>
         </nav>
-        <Burger />
+        <div className={styles.header__dd}>
+          <HeaderDD type={false} />
+          <Burger />
+        </div>
         {user ? (
           <Button
             children={'Вийти'}
