@@ -5,41 +5,57 @@ import { ROUTES } from '../../Constants/Routes/routes';
 import { DownOutlined } from '@ant-design/icons';
 
 import styles from './header-dd.module.scss';
-
-const menu = (
-  <Menu
-    items={[
-      {
-        key: '1',
-        label: (
-          <Link className={styles.dropdown__link} to={ROUTES.FAQ}>
-            FAQ
-          </Link>
-        ),
-      },
-      {
-        key: '2',
-        label: (
-          <Link className={styles.dropdown__link} to={ROUTES.PAYMENT}>
-            Умови оплати
-          </Link>
-        ),
-      },
-      {
-        key: '3',
-        label: (
-          <Link className={styles.dropdown__link} to={ROUTES.SUPPORT}>
-            Підтримка
-          </Link>
-        ),
-      },
-    ]}
-  />
-);
+import useModal from '../../hooks/modal';
+import { useDispatch } from 'react-redux';
 
 const HeaderDD: FC = () => {
+  const dispatch = useDispatch();
+  const { handleCancel } = useModal();
+  const menu = (
+    <Menu
+      items={[
+        {
+          key: '1',
+          label: (
+            <Link
+              to={ROUTES.FAQ}
+              onClick={() => dispatch(handleCancel())}
+              className={styles.dropdown__link}
+            >
+              FAQ
+            </Link>
+          ),
+        },
+        {
+          key: '2',
+          label: (
+            <Link
+              to={ROUTES.PAYMENT}
+              onClick={() => dispatch(handleCancel())}
+              className={styles.dropdown__link}
+            >
+              Умови оплати
+            </Link>
+          ),
+        },
+        {
+          key: '3',
+          label: (
+            <Link
+              to={ROUTES.SUPPORT}
+              onClick={() => dispatch(handleCancel())}
+              className={styles.dropdown__link}
+            >
+              Підтримка
+            </Link>
+          ),
+        },
+      ]}
+    />
+  );
+
   return (
-    <Dropdown overlay={menu}>
+    <Dropdown overlay={menu} placement={'bottomLeft'}>
       <div
         className={styles.dropdown__header}
         onClick={(e) => e.preventDefault()}

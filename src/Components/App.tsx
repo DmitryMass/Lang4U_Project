@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { ROUTES } from './Constants/Routes/routes';
 import { BackTop } from 'antd';
 import { UpOutlined } from '@ant-design/icons';
@@ -22,13 +22,13 @@ import NotFound from './NotFound/NotFound';
 
 import styles from './App.module.scss';
 import UserPage from '../Pages/UserPage/UserPage';
+import Admin from '../Pages/Admin/Admin';
 
 const App: FC = () => {
   const location = useLocation();
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, [location]);
-
   return (
     <div className={styles.app}>
       <div className={styles.app__container}>
@@ -50,7 +50,18 @@ const App: FC = () => {
           <Route path={ROUTES.LOGIN} element={<Login />} />
           <Route path={ROUTES.REGISTRATION} element={<Registration />} />
           <Route path={ROUTES.NOTFOUND} element={<NotFound />} />
-          <Route path={ROUTES.USERPAGE} element={<UserPage />} />
+          <Route
+            path={ROUTES.USERPAGE}
+            element={
+              localStorage.user ? <UserPage /> : <Navigate to={ROUTES.HOME} />
+            }
+          />
+          <Route
+            path={ROUTES.ADMIN}
+            element={
+              localStorage.admin ? <Admin /> : <Navigate to={ROUTES.HOME} />
+            }
+          />
         </Routes>
       </div>
       <Footer />

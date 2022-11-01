@@ -12,6 +12,7 @@ export const ROUTES = {
   COURSESITEM: '/courses/:id',
   USERPAGE: '/personal',
   NOTFOUND: '/*',
+  ADMIN: '/admin',
 };
 
 export const ROUTES_COURSE = {

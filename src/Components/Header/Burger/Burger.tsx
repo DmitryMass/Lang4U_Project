@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MenuUnfoldOutlined } from '@ant-design/icons';
 import { Modal } from 'antd';
 import { headerLinks } from '../../Constants/Header-Nav/header-links';
@@ -10,25 +10,25 @@ import HeaderNavItem from '../Header-Nav/HeaderNavItem';
 
 import { IHeaderLinks } from '../../../Types/header-links-types';
 import styles from './burger.module.scss';
+import useTypedSelector from '../../../Store/hooks-store/useTypedSelector';
+import useLogout from '../../hooks/useLogout';
+import useModal from '../../hooks/modal';
+import { useDispatch } from 'react-redux';
 
 const Burger = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
+  const dispatch = useDispatch();
+  const { handleCancel, isModalOpen, showModal } = useModal();
+  const { user } = useTypedSelector((state) => state.userToken);
+  const { handleLogout } = useLogout();
 
   return (
     <div className={styles.burger}>
-      <MenuUnfoldOutlined type='primary' onClick={showModal}>
+      <MenuUnfoldOutlined type='primary' onClick={() => dispatch(showModal())}>
         Open Modal
       </MenuUnfoldOutlined>
       <Modal
         footer={null}
-        onCancel={handleCancel}
+        onCancel={() => dispatch(handleCancel())}
         title='Lang4U'
         open={isModalOpen}
       >
@@ -39,18 +39,27 @@ const Burger = () => {
             items={headerLinks}
             renderItems={(item: IHeaderLinks) => (
               <HeaderNavItem
-                handleClick={handleCancel}
+                handleClick={() => dispatch(handleCancel())}
                 elem={item}
                 key={item.link}
               />
             )}
           />
-          <Button
-            handleClick={handleCancel}
-            children={'Увійти'}
-            modificator={'burger__login'}
-            route={ROUTES.LOGIN}
-          />
+          {user ? (
+            <Button
+              children={'Вийти'}
+              modificator={'burger__login'}
+              route={ROUTES.HOME}
+              handleClick={handleLogout}
+            />
+          ) : (
+            <Button
+              children={'Увійти'}
+              modificator={'burger__login'}
+              route={ROUTES.LOGIN}
+              handleClick={() => dispatch(handleCancel())}
+            />
+          )}
         </div>
       </Modal>
     </div>
