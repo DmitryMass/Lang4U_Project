@@ -4,8 +4,11 @@
   padding: 30px 0;
 }
 .auth__form {
-  max-width: 280px;
+  max-width: 320px;
   width: 100%;
+  padding: 20px;
+  box-shadow: 0px 4px 35px rgb(0 0 0 / 8%);
+  border-radius: 8px;
 }
 .auth__logo {
   @include flex-container(center, center, nowrap);
@@ -17,7 +20,7 @@
   @include container(950px, 15px);
 }
 .login__flex {
-  @include flex-container(center, flex-start, nowrap);
+  @include flex-container(center, center, nowrap);
   gap: 40px;
   @media screen and (max-width: 576px) {
     flex-direction: column;
