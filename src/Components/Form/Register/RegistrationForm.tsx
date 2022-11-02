@@ -3,40 +3,16 @@ import { Field, Formik } from 'formik';
 import TypeButton from '../../Button/TypeButton/TypeButton';
 import { registrationValidation } from '../ValidationScheme/ValidationAuth';
 import { ROUTES } from '../../Constants/Routes/routes';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from '../auth-forms.module.scss';
 import { useRegistrationMutation } from '../../../Store/Api-Query/Auth/auth';
-
-interface IInitalState {
-  email: string;
-  password: string;
-}
+import Loader from '../../Loader/Loader';
+import { useSubmit } from '../useSubmit';
+import AlertComponent from '../../Error/ErrorComponent';
 
 const RegistrationForm: FC = () => {
-  const navigate = useNavigate();
-  const [registration, { isLoading }] = useRegistrationMutation();
-
-  const formikHandleSubmit = async (
-    values: IInitalState,
-    { resetForm }: any
-  ) => {
-    const body = new FormData();
-    Object.entries(values).forEach((item) => {
-      body.append(item[0], item[1]);
-    });
-    try {
-      const data: any = await registration(body);
-      if (data?.data?.message === 'Ok') {
-        navigate('/login');
-        return;
-      }
-      alert(data?.error?.data?.message);
-    } catch (e) {
-      console.log(e);
-    }
-    resetForm();
-  };
-
+  const [registration, { isLoading, isError }] = useRegistrationMutation();
+  const { formikHandleSubmit } = useSubmit(registration);
   return (
     <>
       <Formik
@@ -47,6 +23,12 @@ const RegistrationForm: FC = () => {
         {({ handleSubmit, handleChange, handleBlur, values, errors }) => (
           <form onSubmit={handleSubmit}>
             <div className={styles.form__inputWrapper}>
+              {isError && (
+                <AlertComponent
+                  type='error'
+                  message='Помилка, спробуйте ще раз.'
+                />
+              )}
               <div className={styles.email__box}>
                 {errors.email && (
                   <div className={styles.email__error}>{errors.email}</div>
@@ -105,7 +87,7 @@ const RegistrationForm: FC = () => {
               </div>
             </div>
             <TypeButton modificator={'auth__btn'} type='submit'>
-              {isLoading ? 'Loading...' : 'Зареєструватись'}
+              {isLoading ? <Loader /> : 'Зареєструватись'}
             </TypeButton>
           </form>
         )}

@@ -1,65 +1,36 @@
 import React, { FC } from 'react';
-import { Field, Formik } from 'formik';
-import TypeButton from '../../Button/TypeButton/TypeButton';
-
-import { loginValidation } from '../ValidationScheme/ValidationAuth';
 import { ROUTES } from '../../Constants/Routes/routes';
-import { Link, useNavigate } from 'react-router-dom';
-import styles from '../auth-forms.module.scss';
+import { Link } from 'react-router-dom';
+import { Field, Formik } from 'formik';
+import { loginValidation } from '../ValidationScheme/ValidationAuth';
 import { useLoginMutation } from '../../../Store/Api-Query/Auth/auth';
-import { useDispatch } from 'react-redux';
-import useActions from '../../../Store/hooks-store/actions';
+import { useSubmit } from '../useSubmit';
+import TypeButton from '../../Button/TypeButton/TypeButton';
+import Loader from '../../Loader/Loader';
+import AlertComponent from '../../Error/ErrorComponent';
 
-interface IInitalState {
-  email: string;
-  password: string;
-}
+import styles from '../auth-forms.module.scss';
 
 const LoginForm: FC = () => {
-  const dispatch = useDispatch();
-  const { loginSuccess } = useActions();
-  const navigate = useNavigate();
-  const [login, { isLoading }] = useLoginMutation();
-
-  const formikHandleSubmit = async (
-    values: IInitalState,
-    { resetForm }: any
-  ) => {
-    const body = new FormData();
-    Object.entries(values).forEach((item) => {
-      body.append(item[0], item[1]);
-    });
-    try {
-      const data: any = await login(body);
-      if (data?.data?.message === 'Ok') {
-        if (data?.data?.role === 'Admin') {
-          localStorage.setItem('admin', 'true');
-          dispatch(loginSuccess());
-          navigate('/admin');
-          return;
-        }
-        localStorage.setItem('user', 'true');
-        dispatch(loginSuccess());
-        navigate('/');
-        return;
-      }
-      alert(data?.error?.data?.message);
-    } catch (e) {
-      console.log(e);
-    }
-    resetForm();
-  };
+  const [login, { isLoading, isError }] = useLoginMutation();
+  const { formikHandleLoginSubmit } = useSubmit(login);
 
   return (
     <>
       <Formik
         initialValues={{ email: '', password: '' }}
-        onSubmit={formikHandleSubmit}
+        onSubmit={formikHandleLoginSubmit}
         validationSchema={loginValidation}
       >
         {({ handleSubmit, handleChange, handleBlur, values, errors }) => (
           <form onSubmit={handleSubmit}>
             <div className={styles.form__inputWrapper}>
+              {isError && (
+                <AlertComponent
+                  type='error'
+                  message='Помилка, спробуйте ще раз.'
+                />
+              )}
               <div className={styles.email__box}>
                 {errors.email && (
                   <div className={styles.email__error}>{errors.email}</div>
@@ -100,7 +71,7 @@ const LoginForm: FC = () => {
               </div>
             </div>
             <TypeButton modificator={'auth__btn'} type='submit'>
-              {isLoading ? 'Loading...' : 'Увійти'}
+              {isLoading ? <Loader /> : 'Увійти'}
             </TypeButton>
           </form>
         )}

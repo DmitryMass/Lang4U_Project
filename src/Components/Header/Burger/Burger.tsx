@@ -1,24 +1,20 @@
 import React, { FC } from 'react';
+import { useDispatch } from 'react-redux';
 import { MenuUnfoldOutlined } from '@ant-design/icons';
 import { Modal } from 'antd';
 import { headerLinks } from '../../Constants/Header-Nav/header-links';
-import { ROUTES } from '../../Constants/Routes/routes';
-import Button from '../../Button/Button';
+import { IHeaderLinks } from '../../../Types/header-links-types';
 import Nav from '../../Navigation/Nav';
 import HeaderNavItem from '../Header-Nav/HeaderNavItem';
 
-import { IHeaderLinks } from '../../../Types/header-links-types';
-import styles from './burger.module.scss';
-import useTypedSelector from '../../../Store/hooks-store/useTypedSelector';
-import useLogout from '../../hooks/useLogout';
 import useModal from '../../hooks/modal';
-import { useDispatch } from 'react-redux';
+import AuthUser from '../AuthUser';
+
+import styles from './burger.module.scss';
 
 const Burger: FC = () => {
   const dispatch = useDispatch();
   const { handleCancel, isModalOpen, showModal } = useModal();
-  const { user } = useTypedSelector((state) => state.userToken);
-  const { handleLogout } = useLogout();
 
   return (
     <div className={styles.burger}>
@@ -43,24 +39,7 @@ const Burger: FC = () => {
               />
             )}
           />
-          {user ? (
-            <Button
-              children={'Вийти'}
-              modificator={'burger__login'}
-              route={ROUTES.HOME}
-              handleClick={() => {
-                handleLogout();
-                dispatch(handleCancel());
-              }}
-            />
-          ) : (
-            <Button
-              children={'Увійти'}
-              modificator={'burger__login'}
-              route={ROUTES.LOGIN}
-              handleClick={() => dispatch(handleCancel())}
-            />
-          )}
+          <AuthUser modificator='burger__login' />
         </div>
       </Modal>
     </div>

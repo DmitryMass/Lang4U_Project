@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import { Dropdown, Menu, Space } from 'antd';
+import { Dropdown, Space } from 'antd';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../Constants/Routes/routes';
 import { DownOutlined } from '@ant-design/icons';
+import type { MenuProps } from 'antd';
 
 import styles from './header-dd.module.scss';
 
@@ -10,40 +11,36 @@ interface IHeaderDD {
   type: boolean;
 }
 
-const HeaderDD: FC<IHeaderDD> = ({ type }) => {
-  const menu = (
-    <Menu
-      items={[
-        {
-          key: '1',
-          label: (
-            <Link to={ROUTES.FAQ} className={styles.dropdown__link}>
-              FAQ
-            </Link>
-          ),
-        },
-        {
-          key: '2',
-          label: (
-            <Link to={ROUTES.PAYMENT} className={styles.dropdown__link}>
-              Умови оплати
-            </Link>
-          ),
-        },
-        {
-          key: '3',
-          label: (
-            <Link to={ROUTES.SUPPORT} className={styles.dropdown__link}>
-              Підтримка
-            </Link>
-          ),
-        },
-      ]}
-    />
-  );
+const items: MenuProps['items'] = [
+  {
+    key: '1',
+    label: (
+      <Link to={ROUTES.FAQ} className={styles.dropdown__link}>
+        FAQ
+      </Link>
+    ),
+  },
+  {
+    key: '2',
+    label: (
+      <Link to={ROUTES.PAYMENT} className={styles.dropdown__link}>
+        Умови оплати
+      </Link>
+    ),
+  },
+  {
+    key: '3',
+    label: (
+      <Link to={ROUTES.SUPPORT} className={styles.dropdown__link}>
+        Підтримка
+      </Link>
+    ),
+  },
+];
 
+const HeaderDD: FC<IHeaderDD> = ({ type }) => {
   return (
-    <Dropdown overlay={menu} placement={'bottomLeft'} trigger={['click']}>
+    <Dropdown menu={{ items }} placement={'bottomLeft'} trigger={['click']}>
       <div
         className={styles.dropdown__header}
         onClick={(e) => e.preventDefault()}

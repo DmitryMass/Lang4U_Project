@@ -1,0 +1,11 @@
+@import '../../Styles/vars';
+
+.admin {
+  padding: 30px 0;
+}
+
+.admin__container {
+  @include container(992px, 15px);
+  @include flex-container(center, flex-start, nowrap);
+  gap: 50px;
+}

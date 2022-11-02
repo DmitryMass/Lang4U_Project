@@ -39,3 +39,11 @@
     gap: 10px;
   }
 }
+
+.header__btns {
+  @include flex-container(center, center, nowrap);
+  gap: 10px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}

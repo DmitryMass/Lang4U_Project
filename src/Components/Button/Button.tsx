@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Button.scss';
 
 interface IButtonProps {
-  children: string;
+  children: string | React.ReactElement;
   route: string;
   modificator: string;
   handleClick?: () => void;

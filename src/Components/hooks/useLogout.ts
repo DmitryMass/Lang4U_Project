@@ -13,13 +13,11 @@ const useLogout = () => {
       if (await localStorage.user) {
         delete localStorage.user;
         dispatch(userOut());
-        alert('До зустрічі!');
         return;
       }
       if (await localStorage.admin) {
         delete localStorage.admin;
         dispatch(userOut());
-        alert('До зустрічі!');
         return;
       }
       alert('Сталася помилка.');
