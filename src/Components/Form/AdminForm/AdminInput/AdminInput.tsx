@@ -5,10 +5,12 @@ import styles from '../admin-form.module.scss';
 
 interface IAdminInputProps {
   error?: string;
-  handleChange: (e: React.ChangeEvent<any>) => void;
-  handleBlur: (e: React.FocusEvent<any, Element>) => void;
+  // handleChange: (e: React.ChangeEvent<any>) => void;
+  handleChange: any;
+  handleBlur: any;
   value: string;
   placeholder: string;
+  name?: string;
 }
 
 const AdminInput: FC<IAdminInputProps> = ({
@@ -17,6 +19,7 @@ const AdminInput: FC<IAdminInputProps> = ({
   error,
   value,
   placeholder,
+  name,
 }) => {
   return (
     <div className={styles.input__box}>
@@ -28,7 +31,7 @@ const AdminInput: FC<IAdminInputProps> = ({
         onChange={handleChange}
         onBlur={handleBlur}
         value={value}
-        name='input'
+        name={name}
         placeholder={placeholder}
       />
     </div>

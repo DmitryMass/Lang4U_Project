@@ -12,7 +12,6 @@ interface ICourseItemProps {
 
 const CourseSwiperItem: FC<ICourseItemProps> = ({ item }) => {
   const { details, duration, logo, modules, price, title, color, link } = item;
-
   const navigate = useNavigate();
   return (
     <div className={`course__box ${color}`}>

@@ -20,3 +20,10 @@
 <!--  -->
 
 - Nav , для повторного использования, списков по названию для навигации продумать исправить
+
+//upload logo (без статики експресса, чистый линк) - для админки
+
+https://www.svgrepo.com/show/110211/united-kingdom.svg
+https://www.svgrepo.com/show/131993/germany.svg
+https://www.svgrepo.com/show/401755/flag-for-spain.svg
+https://www.svgrepo.com/show/132022/china.svg

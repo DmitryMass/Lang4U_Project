@@ -13,8 +13,8 @@ interface IAbout {
 }
 
 const AboutCourse: FC<IAboutCourse> = ({ title }) => {
-  const buttonTitle = title.split(' ').slice(1).join(' ');
-  const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+  const buttonTitle = title?.split(' ').slice(1).join(' ');
+  const capitalize = (s: string) => s?.charAt(0).toUpperCase() + s?.slice(1);
   return (
     <section className={styles.about__section}>
       <div>

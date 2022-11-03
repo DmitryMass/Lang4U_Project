@@ -1,1 +1,27 @@
 @import '../../../Styles/vars';
+
+.input__box {
+  max-width: 300px;
+  width: 100%;
+}
+.form__input {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 3px black;
+  margin: 5px 0;
+  width: 100%;
+  &::placeholder {
+    opacity: 0.5;
+  }
+}
+.input__error {
+  @include text(12px, 14px, 400);
+  color: $red;
+}
+.form__submit {
+  max-width: 300px;
+  width: 100%;
+  margin-top: 10px;
+  @include flex-container(center, center, nowrap);
+}

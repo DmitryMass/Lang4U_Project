@@ -7,6 +7,7 @@ import { useCreateCourseMutation } from '../../../Store/Api-Query/Courses/course
 import Loader from '../../Loader/Loader';
 import TypeButton from '../../Button/TypeButton/TypeButton';
 import AdminInput from './AdminInput/AdminInput';
+import { courseValidation } from '../ValidationScheme/ValidationCourse';
 
 export interface IAdminCourse {
   logo: string;
@@ -24,13 +25,18 @@ export interface IAdminCourse {
 }
 
 const AdminForm: FC = () => {
-  const [createCourse, { isError, isLoading }] = useCreateCourseMutation();
+  const [createCourse, { isError, isLoading, isSuccess }] =
+    useCreateCourseMutation();
 
   const formikHandleSubmit = async (
     values: IAdminCourse,
     { resetForm }: any
   ) => {
-    console.log({ ...values });
+    try {
+      await createCourse({ ...values });
+    } catch (e) {
+      console.log(e);
+    }
 
     resetForm();
   };
@@ -45,30 +51,32 @@ const AdminForm: FC = () => {
           details: 'Дізнатись детальніше',
           expert: '',
           lessons: '',
-          link: '/',
+          link: '',
           modules: '',
           price: 'Від',
           task: '',
           tests: '',
         }}
         onSubmit={formikHandleSubmit}
-        validationSchema={''}
+        validationSchema={courseValidation}
       >
         {({ handleSubmit, handleChange, handleBlur, values, errors }) => (
           <form onSubmit={handleSubmit}>
-            <div className={styles.form__wrapper}>
-              {isError && (
-                <AlertComponent
-                  type='error'
-                  message='Помилка, спробуйте ще раз.'
-                />
-              )}
-            </div>
+            {isError && (
+              <AlertComponent
+                type='error'
+                message='Помилка, спробуйте ще раз.'
+              />
+            )}
+            {isSuccess && (
+              <AlertComponent type='success' message='Курс створено.' />
+            )}
             <AdminInput
               handleBlur={handleBlur}
               handleChange={handleChange}
-              error={errors.color}
+              error={errors.logo}
               value={values.logo}
+              name={'logo'}
               placeholder={'Логотип'}
             />
             <AdminInput
@@ -77,6 +85,7 @@ const AdminForm: FC = () => {
               error={errors.title}
               value={values.title}
               placeholder={'Назва курсу'}
+              name={'title'}
             />
             <AdminInput
               handleBlur={handleBlur}
@@ -84,6 +93,15 @@ const AdminForm: FC = () => {
               error={errors.duration}
               value={values.duration}
               placeholder={'Тривалість годин'}
+              name={'duration'}
+            />
+            <AdminInput
+              handleBlur={handleBlur}
+              handleChange={handleChange}
+              error={errors.price}
+              value={values.price}
+              placeholder={'Ціна'}
+              name={'price'}
             />
             <AdminInput
               handleBlur={handleBlur}
@@ -91,6 +109,7 @@ const AdminForm: FC = () => {
               error={errors.color}
               value={values.color}
               placeholder={'Колір боксу'}
+              name={'color'}
             />
             <AdminInput
               handleBlur={handleBlur}
@@ -98,6 +117,7 @@ const AdminForm: FC = () => {
               error={errors.details}
               value={values.details}
               placeholder={'Дізнатись детальніше'}
+              name={'details'}
             />
             <AdminInput
               handleBlur={handleBlur}
@@ -105,6 +125,7 @@ const AdminForm: FC = () => {
               error={errors.lessons}
               value={values.lessons}
               placeholder={'Кількість занять'}
+              name={'lessons'}
             />
             <AdminInput
               handleBlur={handleBlur}
@@ -112,6 +133,7 @@ const AdminForm: FC = () => {
               error={errors.link}
               value={values.link}
               placeholder={'Силка на кожен курс'}
+              name={'link'}
             />
             <AdminInput
               handleBlur={handleBlur}
@@ -119,6 +141,7 @@ const AdminForm: FC = () => {
               error={errors.modules}
               value={values.modules}
               placeholder={'Кількість модулей'}
+              name={'modules'}
             />
             <AdminInput
               handleBlur={handleBlur}
@@ -126,6 +149,7 @@ const AdminForm: FC = () => {
               error={errors.tests}
               value={values.tests}
               placeholder={'Кількість тестів'}
+              name={'tests'}
             />
             <AdminInput
               handleBlur={handleBlur}
@@ -133,6 +157,7 @@ const AdminForm: FC = () => {
               error={errors.task}
               value={values.task}
               placeholder={'Кількість завдань'}
+              name={'task'}
             />
             <AdminInput
               handleBlur={handleBlur}
@@ -140,10 +165,13 @@ const AdminForm: FC = () => {
               error={errors.expert}
               value={values.expert}
               placeholder={'Кількість занять з викладачем'}
+              name={'expert'}
             />
-            <TypeButton modificator={'auth__btn'} type='submit'>
-              {isLoading ? <Loader /> : 'Створити курс'}
-            </TypeButton>
+            <div className={styles.form__submit}>
+              <TypeButton modificator={'auth__btn'} type='submit'>
+                {isLoading ? <Loader /> : 'Створити курс'}
+              </TypeButton>
+            </div>
           </form>
         )}
       </Formik>

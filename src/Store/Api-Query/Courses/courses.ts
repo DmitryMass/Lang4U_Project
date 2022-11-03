@@ -4,41 +4,44 @@ const URL = 'http://localhost:3005/api';
 
 export const courseApi = createApi({
   reducerPath: 'getCoursesApi',
-  tagTypes: ['Courses'],
+  tagTypes: ['Course'],
   baseQuery: fetchBaseQuery({ baseUrl: URL }),
   endpoints: (build) => ({
     getCourse: build.query({
-      query: () => '/courses',
+      query: () => '/course',
       providesTags: (result) =>
         result
           ? [
-              ...result.map(({ id }: any) => ({ type: 'Courses', id })),
-              { type: 'Courses', id: 'LIST' },
+              ...result.map(({ id }: any) => ({ type: 'Course', id })),
+              { type: 'Course', id: 'LIST' },
             ]
-          : [{ type: 'Courses', id: 'LIST' }],
+          : [{ type: 'Course', id: 'LIST' }],
     }),
     createCourse: build.mutation({
       query: (body) => ({
-        url: '/courses',
+        url: '/course',
         method: 'POST',
         body,
       }),
-      invalidatesTags: [{ type: 'Courses', id: 'CourseList' }],
+      invalidatesTags: [{ type: 'Course', id: 'CourseList' }],
+    }),
+    getOneCourse: build.query({
+      query: (id) => `/course/${id}`,
     }),
     editCourse: build.mutation({
       query: (body) => ({
-        url: `/courses/${body.id}`,
+        url: `/course/${body.id}`,
         method: 'PUT',
         body,
       }),
-      invalidatesTags: [{ type: 'Courses', id: 'CourseList' }],
+      invalidatesTags: [{ type: 'Course', id: 'CourseList' }],
     }),
     deleteCourse: build.mutation({
       query: (id) => ({
-        url: `/courses/${id}`,
+        url: `/course/${id}`,
         method: 'DELETE',
       }),
-      invalidatesTags: [{ type: 'Courses', id: 'CourseList' }],
+      invalidatesTags: [{ type: 'Course', id: 'CourseList' }],
     }),
   }),
 });
@@ -48,4 +51,5 @@ export const {
   useCreateCourseMutation,
   useEditCourseMutation,
   useDeleteCourseMutation,
+  useGetOneCourseQuery,
 } = courseApi;
