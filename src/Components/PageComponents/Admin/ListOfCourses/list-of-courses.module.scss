@@ -1,0 +1,27 @@
+@import '../../../../Styles/vars';
+
+.course__wrapper {
+  @include flex-container(center, center, wrap);
+  gap: 5px;
+  max-width: 700px;
+}
+.course {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 12px;
+  background-color: $green-opacity;
+  padding: 10px;
+  margin: 3px 0px;
+}
+.course__list {
+  @include flex-container(flex-start, center, nowrap);
+  gap: 10px;
+}
+.list__item {
+  @include text(14px, 16px, 500);
+  margin-bottom: 5px;
+  &__title {
+    @include text(14px, 18px, 500);
+    color: blue;
+  }
+}

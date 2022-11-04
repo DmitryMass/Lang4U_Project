@@ -1,0 +1,15 @@
+@import '../../../../Styles/vars';
+
+.admin__rules {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.rules__list {
+  list-style: inherit;
+  max-width: 700px;
+  & > li {
+    list-style: inside;
+    @include text(14px, 16px, 500);
+    margin-left: 15px;
+  }
+}

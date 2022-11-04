@@ -53,3 +53,30 @@
 .auth__btn {
   width: 100%;
 }
+
+.edit__btn,
+.delete__btn {
+  cursor: pointer;
+  padding: 5px 8px;
+  @include text(14px, 16px, 500);
+  @include border(none, 8px);
+  transition: all 0.3s ease;
+}
+.edit__btn {
+  background: $yellow-border;
+  margin-right: 5px;
+  &:hover {
+    transition: all 0.2s ease;
+    color: white;
+    background-color: $yellow;
+  }
+}
+
+.delete__btn {
+  background: $red-border;
+  &:hover {
+    transition: all 0.2s ease;
+    color: $white;
+    background-color: $red;
+  }
+}

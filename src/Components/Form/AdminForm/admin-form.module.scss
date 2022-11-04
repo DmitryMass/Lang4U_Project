@@ -1,5 +1,12 @@
 @import '../../../Styles/vars';
 
+.form {
+  @include flex-container(center, center, nowrap);
+  min-width: 290px;
+  & > form {
+    width: 100%;
+  }
+}
 .input__box {
   max-width: 300px;
   width: 100%;

@@ -1,4 +1,5 @@
 export default interface ICoursesList {
+  id: string | number;
   logo: string;
   title: string;
   duration: string;

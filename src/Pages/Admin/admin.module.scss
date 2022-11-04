@@ -3,9 +3,14 @@
 .admin {
   padding: 30px 0;
 }
+.admin__wrapper {
+  @include container(1200px, 15px);
+}
 
 .admin__container {
-  @include container(992px, 15px);
-  @include flex-container(center, flex-start, nowrap);
-  gap: 50px;
+  @include flex-container(space-around, flex-start, nowrap);
+  gap: 30px;
+  @media screen and (max-width: 992px) {
+    @include flex-container(center, center, wrap);
+  }
 }

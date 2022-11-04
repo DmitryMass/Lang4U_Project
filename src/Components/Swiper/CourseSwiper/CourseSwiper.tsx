@@ -7,9 +7,13 @@ import { ROUTES } from '../../Constants/Routes/routes';
 import MainTitle from '../../Text/Titles/MainTitle';
 import styles from './course-swiper.module.scss';
 import useTypedSelector from '../../../Store/hooks-store/useTypedSelector';
+import { useGetCourseQuery } from '../../../Store/Api-Query/Courses/courses';
+import AlertComponent from '../../Error/ErrorComponent';
 
 const CourseSwiper = () => {
   const { courses } = useTypedSelector((state) => state.filterSlice);
+  const { isError } = useGetCourseQuery([]);
+
   return (
     <section className={styles.course__swiper}>
       <div className={styles.course__wrapper}>
@@ -48,6 +52,9 @@ const CourseSwiper = () => {
         modules={[FreeMode, Autoplay]}
         className='mySwiper'
       >
+        {isError && (
+          <AlertComponent type='error' message='Вибачте сервер збожеволів.' />
+        )}
         {courses.map((elem) => (
           <SwiperSlide key={elem.title}>
             <CourseSwiperItem item={elem} />
