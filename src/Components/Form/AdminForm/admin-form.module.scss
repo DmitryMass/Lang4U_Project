@@ -2,10 +2,15 @@
 
 .form {
   @include flex-container(center, center, nowrap);
+  flex-direction: column;
   min-width: 290px;
   & > form {
     width: 100%;
   }
+}
+.form__title {
+  @include text(14px, 18px, 500);
+  margin-bottom: 5px;
 }
 .input__box {
   max-width: 300px;

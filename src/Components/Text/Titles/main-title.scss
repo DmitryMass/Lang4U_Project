@@ -105,3 +105,17 @@
     @include text(24px, 32px, 900);
   }
 }
+
+.admin__rules,
+.admin__сourse {
+  margin-bottom: 5px;
+  @include text(24px, 30px, 600);
+  @media screen and (max-width: 992px) {
+    @include text(18px, 24px, 600);
+  }
+}
+
+.admin__сourse {
+  margin-top: 15px;
+  margin-bottom: 0px;
+}

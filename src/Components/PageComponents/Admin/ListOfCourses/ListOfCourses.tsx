@@ -1,44 +1,18 @@
-import React, { FC, useCallback } from 'react';
-import useTypedSelector from '../../../../Store/hooks-store/useTypedSelector';
+import React, { FC, memo } from 'react';
 import TypeButton from '../../../Button/TypeButton/TypeButton';
-import { useDeleteCourseMutation } from '../../../../Store/Api-Query/Courses/courses';
-import { Modal } from 'antd';
-
 import styles from './list-of-courses.module.scss';
+import ICoursesList from '../../../../Types/courses-list-types';
+import useTypedSelector from '../../../../Store/hooks-store/useTypedSelector';
+import { useAdminActions } from '../../../hooks/useAdminActions';
 
 const ListOfCourses: FC = () => {
   const { courses } = useTypedSelector((state) => state.filterSlice);
-  const [deleteCourse, { isSuccess, isError }] = useDeleteCourseMutation();
-
-  const success = useCallback(() => {
-    Modal.success({
-      title: 'Успішно видалено !',
-    });
-  }, []);
-
-  const error = useCallback(() => {
-    Modal.error({
-      title: 'Виникла помилка спробуй пізніше..',
-    });
-  }, []);
-
-  const handleDelete = async (id: string | number) => {
-    try {
-      await deleteCourse(id);
-      // window.location.reload();
-    } catch (e) {
-      // window.location.reload();
-    }
-  };
-
-  console.log(isError, isSuccess);
+  const { handleDelete } = useAdminActions();
 
   return (
     <>
-      {isSuccess && success()}
-      {isError && error()}
       <div className={styles.course__wrapper}>
-        {courses.map((item) => {
+        {courses?.map((item: ICoursesList) => {
           const { title, modules, duration, lessons, task, tests, expert, id } =
             item;
           return (
@@ -81,4 +55,4 @@ const ListOfCourses: FC = () => {
   );
 };
 
-export default ListOfCourses;
+export default memo(ListOfCourses);

@@ -6,14 +6,14 @@ import MainTitle from '../../../../Components/Text/Titles/MainTitle';
 import styles from './about-course.module.scss';
 
 interface IAboutCourse {
-  title: string;
+  title: string | undefined;
 }
 interface IAbout {
   text: string;
 }
 
 const AboutCourse: FC<IAboutCourse> = ({ title }) => {
-  const buttonTitle = title?.split(' ').slice(1).join(' ');
+  const buttonTitle: any = title?.split(' ').slice(1).join(' ');
   const capitalize = (s: string) => s?.charAt(0).toUpperCase() + s?.slice(1);
   return (
     <section className={styles.about__section}>

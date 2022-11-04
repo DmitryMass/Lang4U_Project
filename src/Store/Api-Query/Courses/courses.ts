@@ -3,7 +3,7 @@ import ICoursesList from '../../../Types/courses-list-types';
 
 const URL = 'http://localhost:3005/api';
 
-export const courseApi: any = createApi({
+export const courseApi = createApi({
   reducerPath: 'getCoursesApi',
   tagTypes: ['Course'],
   baseQuery: fetchBaseQuery({ baseUrl: URL }),
@@ -19,12 +19,12 @@ export const courseApi: any = createApi({
           : [{ type: 'Course', id: 'LIST' }],
     }),
     createCourse: build.mutation({
-      query: (body: ICoursesList) => ({
+      query: (body: any) => ({
         url: '/course',
         method: 'POST',
         body,
       }),
-      invalidatesTags: [{ type: 'Course', id: 'CourseList' }],
+      invalidatesTags: [{ type: 'Course', id: 'LIST' }],
     }),
     getOneCourse: build.query<ICoursesList, string>({
       query: (id) => `/course/${id}`,
@@ -35,14 +35,14 @@ export const courseApi: any = createApi({
         method: 'PUT',
         body,
       }),
-      invalidatesTags: [{ type: 'Course', id: 'CourseList' }],
+      invalidatesTags: [{ type: 'Course', id: 'LIST' }],
     }),
     deleteCourse: build.mutation({
       query: (id) => ({
         url: `/course/${id}`,
         method: 'DELETE',
       }),
-      invalidatesTags: [{ type: 'Course', id: 'CourseList' }],
+      invalidatesTags: [{ type: 'Course', id: 'LIST' }],
     }),
   }),
 });
@@ -53,4 +53,5 @@ export const {
   useEditCourseMutation,
   useDeleteCourseMutation,
   useGetOneCourseQuery,
+  useLazyGetCourseQuery,
 } = courseApi;

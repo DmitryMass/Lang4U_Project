@@ -27,7 +27,7 @@ export const ROUTES_COURSE = {
   chinaMiddle: 'intermediate China',
   chinaHigh: 'advanced China',
   spainEasy: 'elementary Spain',
-  spainMiddle: 'itermediate Spain',
+  spainMiddle: 'intermediate Spain',
   spainHigh: 'advanced Spain',
 };
 

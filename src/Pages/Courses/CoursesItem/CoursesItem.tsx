@@ -13,12 +13,12 @@ import AboutCourse from './AboutCourse/AboutCourse';
 import styles from './courses-item.module.scss';
 
 type TCoursesItemParams = {
-  id?: string;
+  id?: any;
 };
 
 const CoursesItem = () => {
   const { id } = useParams<TCoursesItemParams>();
-  const { data = {}, isLoading, isError } = useGetOneCourseQuery(id);
+  const { data, isLoading, isError } = useGetOneCourseQuery(id);
   const { courses } = useTypedSelector((state) => state.filterSlice);
 
   const filteredCourses = courses

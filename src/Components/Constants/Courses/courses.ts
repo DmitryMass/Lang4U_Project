@@ -3,7 +3,7 @@ import spain from '../../../Assets/Icons/spain.svg';
 // import china from '../../../Assets/Icons/china.svg';
 // import german from '../../../Assets/Icons/german.svg';
 // import ICoursesList from '../../../Types/courses-list-types';
-// import { ROUTES_COURSE } from '../Routes/routes';
+import { ROUTES_COURSE } from '../Routes/routes';
 
 // export const coursesList: ICoursesList[] = [
 //   {
@@ -112,7 +112,7 @@ import spain from '../../../Assets/Icons/spain.svg';
 //     details: 'Дізнатись детальніше',
 //     price: 'Від 3500 грн',
 //     color: 'course__green',
-//     link: ROUTES_COURSE.spainMiddle,
+// link: ROUTES_COURSE.spainMiddle,
 //     lessons: '25',
 //     task: '200',
 //     tests: '14',

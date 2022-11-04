@@ -1,10 +1,12 @@
 import React, { FC } from 'react';
+import MainTitle from '../../../Text/Titles/MainTitle';
 
 import styles from './admin-rules.module.scss';
 
 const AdminRules: FC = () => {
   return (
     <div className={styles.admin__rules}>
+      <MainTitle modificator='admin__rules'>Правила створення курсу</MainTitle>
       <ul className={styles.rules__list}>
         <li>
           Логотип приклад:
@@ -39,6 +41,7 @@ const AdminRules: FC = () => {
           "Курси".
         </li>
       </ul>
+      <MainTitle modificator='admin__сourse'>Список існуючих курсів</MainTitle>
     </div>
   );
 };

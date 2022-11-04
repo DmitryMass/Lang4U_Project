@@ -1,16 +1,14 @@
 import React, { FC } from 'react';
 import { Formik } from 'formik';
-import AlertComponent from '../../Error/ErrorComponent';
-
-import { useCreateCourseMutation } from '../../../Store/Api-Query/Courses/courses';
-import Loader from '../../Loader/Loader';
 import TypeButton from '../../Button/TypeButton/TypeButton';
 import AdminInput from './AdminInput/AdminInput';
 import { courseValidation } from '../ValidationScheme/ValidationCourse';
 
 import styles from './admin-form.module.scss';
+import { useAdminActions } from '../../hooks/useAdminActions';
 
 export interface IAdminCourse {
+  id?: string | number;
   logo: string;
   title: string;
   duration: string;
@@ -26,25 +24,11 @@ export interface IAdminCourse {
 }
 
 const AdminForm: FC = () => {
-  const [createCourse, { isError, isLoading, isSuccess }] =
-    useCreateCourseMutation();
-
-  const formikHandleSubmit = async (
-    values: IAdminCourse,
-    { resetForm }: any
-  ) => {
-    try {
-      await createCourse({ ...values });
-      window.location.reload();
-    } catch (e) {
-      console.log(e);
-    }
-
-    resetForm();
-  };
+  const { formikHandleSubmit } = useAdminActions();
   return (
     <>
       <div className={styles.form}>
+        <p className={styles.form__title}>Форма створення курсів</p>
         <Formik
           initialValues={{
             logo: '',
@@ -65,15 +49,6 @@ const AdminForm: FC = () => {
         >
           {({ handleSubmit, handleChange, handleBlur, values, errors }) => (
             <form onSubmit={handleSubmit}>
-              {isError && (
-                <AlertComponent
-                  type='error'
-                  message='Помилка, спробуйте ще раз.'
-                />
-              )}
-              {isSuccess && (
-                <AlertComponent type='success' message='Курс створено.' />
-              )}
               <AdminInput
                 handleBlur={handleBlur}
                 handleChange={handleChange}
@@ -172,7 +147,7 @@ const AdminForm: FC = () => {
               />
               <div className={styles.form__submit}>
                 <TypeButton modificator={'auth__btn'} type='submit'>
-                  {isLoading ? <Loader /> : 'Створити курс'}
+                  Створити курс
                 </TypeButton>
               </div>
             </form>
