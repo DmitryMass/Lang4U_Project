@@ -1,12 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Button from '../../../Components/Button/Button';
-import { coursesList } from '../../../Components/Constants/Courses/courses';
 import AlertComponent from '../../../Components/Error/ErrorComponent';
 import FirstLesson from '../../../Components/FirstLesson/FirstLesson';
 import CourseSwiperItem from '../../../Components/Swiper/CourseSwiper/CourseSwiperItem/CourseSwiperItem';
 import MainTitle from '../../../Components/Text/Titles/MainTitle';
 import { useGetOneCourseQuery } from '../../../Store/Api-Query/Courses/courses';
+import useTypedSelector from '../../../Store/hooks-store/useTypedSelector';
+import ICoursesList from '../../../Types/courses-list-types';
 import AboutCourse from './AboutCourse/AboutCourse';
 
 import styles from './courses-item.module.scss';
@@ -18,16 +19,22 @@ type TCoursesItemParams = {
 const CoursesItem = () => {
   const { id } = useParams<TCoursesItemParams>();
   const { data = {}, isLoading, isError } = useGetOneCourseQuery(id);
-  // const filteredCourses = coursesList
-  //   .filter((item) => item.link.split(' ').pop() === id?.split(' ').pop())
-  //   .filter((item) => item.link !== id);
-  // const { color, tests, task, lessons, expert, price, logo, title } =
-  //   coursesList.filter((item) => item.link === id)[0];
+  const { courses } = useTypedSelector((state) => state.filterSlice);
+
+  const filteredCourses = courses
+    .filter(
+      (item: ICoursesList) =>
+        item.link.split(' ').pop() === id?.split(' ').pop()
+    )
+    .filter((item: ICoursesList) => item.link !== id);
 
   return (
     <div className={styles.item__container}>
       <div className={styles.item__about}>
-        {data === {}! ? (
+        {isError && (
+          <AlertComponent type='error' message='Вибачте сервер збожеволів.' />
+        )}
+        {isLoading ? (
           <AlertComponent message='Очікуйте будь-ласка.' type='warning' />
         ) : (
           <>
@@ -71,11 +78,11 @@ const CoursesItem = () => {
         )}
       </div>
       <MainTitle modificator='contacts__title'>Схожі курси</MainTitle>
-      {/* <div className={styles.item__similar}>
-        {filteredCourses.map((item) => (
+      <div className={styles.item__similar}>
+        {filteredCourses.map((item: ICoursesList) => (
           <CourseSwiperItem key={item.title} item={item} />
         ))}
-      </div> */}
+      </div>
       <FirstLesson />
     </div>
   );

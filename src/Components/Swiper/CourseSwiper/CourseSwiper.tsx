@@ -1,15 +1,15 @@
 import React, { memo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Autoplay } from 'swiper';
-
-import { coursesList } from '../../Constants/Courses/courses';
 import CourseSwiperItem from './CourseSwiperItem/CourseSwiperItem';
 import Button from '../../Button/Button';
 import { ROUTES } from '../../Constants/Routes/routes';
 import MainTitle from '../../Text/Titles/MainTitle';
 import styles from './course-swiper.module.scss';
+import useTypedSelector from '../../../Store/hooks-store/useTypedSelector';
 
 const CourseSwiper = () => {
+  const { courses } = useTypedSelector((state) => state.filterSlice);
   return (
     <section className={styles.course__swiper}>
       <div className={styles.course__wrapper}>
@@ -48,7 +48,7 @@ const CourseSwiper = () => {
         modules={[FreeMode, Autoplay]}
         className='mySwiper'
       >
-        {coursesList.map((elem) => (
+        {courses.map((elem) => (
           <SwiperSlide key={elem.title}>
             <CourseSwiperItem item={elem} />
           </SwiperSlide>

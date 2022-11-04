@@ -23,12 +23,22 @@ import NotFound from './NotFound/NotFound';
 import styles from './App.module.scss';
 import UserPage from '../Pages/UserPage/UserPage';
 import Admin from '../Pages/Admin/Admin';
+import { useGetCourseQuery } from '../Store/Api-Query/Courses/courses';
+import { useDispatch } from 'react-redux';
+import useActions from '../Store/hooks-store/actions';
 
 const App: FC = () => {
   const location = useLocation();
+  const dispatch = useDispatch();
+  const { getCourses } = useActions();
+  const { data = [], isSuccess } = useGetCourseQuery([]);
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  }, [location]);
+    if (isSuccess) {
+      dispatch(getCourses(data));
+    }
+  }, [location, data, dispatch, isSuccess, getCourses]);
   return (
     <div className={styles.app}>
       <div className={styles.app__container}>

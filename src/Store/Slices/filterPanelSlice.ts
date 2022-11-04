@@ -1,21 +1,23 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { coursesList } from '../../Components/Constants/Courses/courses';
 import ICourseList from '../../Types/courses-list-types';
 
 interface IInitialState {
-  courses: ICourseList[];
+  courses: ICourseList[] | [];
   filteredCourses: [] | ICourseList[];
 }
 
 const initialState: IInitialState = {
-  courses: coursesList,
-  filteredCourses: coursesList,
+  courses: [],
+  filteredCourses: [],
 };
 
 export const filterSlice = createSlice({
   name: 'filterSlice',
   initialState,
   reducers: {
+    getCourses: (state, action: PayloadAction<ICourseList[]>) => {
+      state.courses = action.payload;
+    },
     filterCategory: (state, action: PayloadAction<string>) => {
       state.filteredCourses =
         action.payload === 'Всі'

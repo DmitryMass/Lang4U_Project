@@ -1,19 +1,21 @@
 import React, { FC, memo } from 'react';
-// import useFilter from '../../Components/hooks/useFilter';
 import Nav from '../../Components/Navigation/Nav';
 import MainTitle from '../../Components/Text/Titles/MainTitle';
 import ICoursesList from '../../Types/courses-list-types';
-
 import FilterPanel from './FilterPanel/FilterPanel';
-import styles from './courses.module.scss';
 import CourseSwiperItem from '../../Components/Swiper/CourseSwiper/CourseSwiperItem/CourseSwiperItem';
 import { useGetCourseQuery } from '../../Store/Api-Query/Courses/courses';
 import AlertComponent from '../../Components/Error/ErrorComponent';
-import Loader from '../../Components/Loader/Loader';
+import useTypedSelector from '../../Store/hooks-store/useTypedSelector';
+
+import styles from './courses.module.scss';
 
 const Courses: FC = () => {
-  // const { filteredCourses } = useFilter();
-  const { data = [], isError } = useGetCourseQuery([]);
+  const { courses, filteredCourses } = useTypedSelector(
+    (state) => state.filterSlice
+  );
+  const { isError } = useGetCourseQuery([]);
+
   return (
     <div className={styles.filter}>
       <div className={styles.filter__titleWrapper}>
@@ -26,12 +28,12 @@ const Courses: FC = () => {
         {isError && (
           <AlertComponent type='error' message='Вибачте сервер збожеволів.' />
         )}
-        {data.length < 1 ? (
+        {courses.length <= 0 ? (
           <AlertComponent type='warning' message='Очікуйте будь-ласка.' />
         ) : (
           <Nav
             modificator='course__wrapper'
-            items={data}
+            items={filteredCourses.length ? filteredCourses : courses}
             renderItems={(item: ICoursesList) => (
               <CourseSwiperItem key={item.title} item={item} />
             )}

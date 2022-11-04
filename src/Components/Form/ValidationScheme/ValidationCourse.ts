@@ -43,7 +43,7 @@ export const courseValidation = yup.object().shape({
     .string()
     .min(2, 'Мінімум 2 символи')
     .matches(/^[0-9a-zA-Z/:,.;&$^*()#@!-=+_\s]*$/gi, 'Букви цифри символи.')
-    .required(`Приклад: /english Elementary`),
+    .required(`Приклад: english Elementary`),
   lessons: yup
     .string()
     .min(1, 'Мінімум 1 символи')
