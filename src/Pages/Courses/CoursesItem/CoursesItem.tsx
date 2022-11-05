@@ -9,6 +9,7 @@ import { useGetOneCourseQuery } from '../../../Store/Api-Query/Courses/courses';
 import useTypedSelector from '../../../Store/hooks-store/useTypedSelector';
 import ICoursesList from '../../../Types/courses-list-types';
 import AboutCourse from './AboutCourse/AboutCourse';
+import WhyFast from './WhyFast/WhyFast';
 
 import styles from './courses-item.module.scss';
 
@@ -77,6 +78,7 @@ const CoursesItem = () => {
           </>
         )}
       </div>
+      <WhyFast />
       <MainTitle modificator='contacts__title'>Схожі курси</MainTitle>
       <div className={styles.item__similar}>
         {filteredCourses.map((item: ICoursesList) => (
