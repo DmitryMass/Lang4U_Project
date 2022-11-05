@@ -4,18 +4,10 @@ import TypeButton from '../../Button/TypeButton/TypeButton';
 import { contactsValidation } from '../ValidationScheme/ValidationContactsSchema';
 
 import styles from './support-form.module.scss';
-
-interface IInitalState {
-  email: string;
-  name: string;
-  message: string;
-}
+import { useSupport } from '../../hooks/useSupport';
 
 const SupportForm: FC = () => {
-  const formikHandleSubmit = (values: IInitalState, { resetForm }: any) => {
-    console.log({ ...values, name: values.name.replace(/\s+/g, ' ').trim() });
-    resetForm();
-  };
+  const { formikHandleSubmit } = useSupport();
 
   return (
     <Formik

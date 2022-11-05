@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import ICoursesList from '../../../Types/courses-list-types';
-
 const URL = 'http://localhost:3005/api';
 
 export const courseApi = createApi({

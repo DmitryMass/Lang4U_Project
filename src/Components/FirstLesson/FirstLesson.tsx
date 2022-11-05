@@ -9,18 +9,11 @@ import { Link } from 'react-router-dom';
 import { ROUTE_POLICY } from '../Constants/Routes/routes';
 import MainTitle from '../Text/Titles/MainTitle';
 import styles from './first-lesson.module.scss';
-
-interface IInitalState {
-  email: string;
-  rules: boolean;
-}
+import { useFirstLesson } from '../hooks/useFirstLesson';
+import Loader from '../Loader/Loader';
 
 const FirstLesson: FC = () => {
-  const formikHandleSubmit = (values: IInitalState, { resetForm }: any) => {
-    console.log(values);
-    resetForm();
-  };
-
+  const { formikHandleSubmit, isLoading } = useFirstLesson();
   return (
     <section className={styles.lesson}>
       <div className={styles.lesson__free}>
@@ -53,7 +46,7 @@ const FirstLesson: FC = () => {
                   />
                 </label>
                 <TypeButton modificator={'button__lesson'} type='submit'>
-                  Відправити
+                  {isLoading ? <Loader /> : 'Відправити'}
                 </TypeButton>
               </div>
               <div className={styles.lesson__rulesBox}>
