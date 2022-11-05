@@ -2,6 +2,7 @@ import React, { FC, memo } from 'react';
 import FaqSection from '../../Components/FAQSection/FaqSection';
 import FirstLesson from '../../Components/FirstLesson/FirstLesson';
 import ForWhom from '../../Components/PageComponents/Home/ForWhom/ForWhom';
+import HowItWorks from '../../Components/PageComponents/Home/HowItWorks/HowItWorks';
 import MainInfo from '../../Components/PageComponents/Home/MainInfo/MainInfo';
 import Methodology from '../../Components/PageComponents/Home/Methodology/Methodology';
 import CourseSwiper from '../../Components/Swiper/CourseSwiper/CourseSwiper';
@@ -16,8 +17,9 @@ const Home: FC = () => {
         <CourseSwiper />
         <ForWhom />
         <Methodology />
-        <FaqSection />
+        <HowItWorks />
         <FirstLesson />
+        <FaqSection />
       </div>
     </div>
   );

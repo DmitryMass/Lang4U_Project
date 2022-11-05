@@ -1,0 +1,59 @@
+@import '../../../../Styles/vars';
+
+.how {
+  padding: 30px 0;
+}
+.how__wrapper {
+  @include flex-container(space-between, center, nowrap);
+  gap: 30px;
+  margin-top: 30px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+.how__name {
+  & > h2 {
+    text-align: center;
+  }
+}
+.how__box {
+  @include flex-container(space-between, flex-start, nowrap);
+  flex-direction: column;
+  max-width: 400px;
+  min-height: 280px;
+  width: 100%;
+  padding: 15px;
+  box-shadow: 0px 0px 10px rgb(136, 135, 135);
+  border-radius: 8px;
+  & > img {
+    max-width: 100%;
+  }
+}
+
+.how__id {
+  @include flex-container(center, center, nowrap);
+  @include text(14px, 18px, 500);
+  padding: 3px;
+  border-radius: 50%;
+  background-color: $green-active;
+  width: 33px;
+  height: 33px;
+  color: $white;
+  @media screen and (max-width: 576px) {
+    @include text(12px, 16px, 500);
+  }
+}
+
+.how__title {
+  @include text(18px, 24px, 600);
+  @media screen and (max-width: 576px) {
+    @include text(16px, 21px, 500);
+  }
+}
+
+.how__description {
+  @include text(16px, 21px, 500);
+  @media screen and (max-width: 576px) {
+    @include text(14px, 18px, 500);
+  }
+}

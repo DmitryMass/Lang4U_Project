@@ -119,3 +119,13 @@
   margin-top: 15px;
   margin-bottom: 0px;
 }
+
+.how__title {
+  @include text(32px, 46px, 600);
+  @media screen and (max-width: 768px) {
+    @include text(21px, 26px, 600);
+  }
+  @media screen and (max-width: 576px) {
+    @include text(16px, 24px, 600);
+  }
+}
