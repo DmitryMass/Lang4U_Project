@@ -40,6 +40,7 @@ const App: FC = () => {
       dispatch(getCourses(data));
     }
   }, [location, data, dispatch, isSuccess, getCourses]);
+
   return (
     <div className={styles.app}>
       <div className={styles.app__container}>
@@ -63,7 +64,7 @@ const App: FC = () => {
           <Route path={ROUTES.REGISTRATION} element={<Registration />} />
           <Route path={ROUTES.NOTFOUND} element={<NotFound />} />
           <Route
-            path={ROUTES.USERPAGE}
+            path={`${ROUTES.USERPAGE}/*`}
             element={
               localStorage.user ? <UserPage /> : <Navigate to={ROUTES.HOME} />
             }

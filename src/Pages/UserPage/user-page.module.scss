@@ -1,12 +1,9 @@
 @import '../../Styles/vars';
 
 .userpage {
-  padding-top: 60px;
-  @include flex-container(center, flex-start, nowrap);
-}
-
-.trigger {
-  width: 100%;
-  text-align: right;
-  margin-bottom: 5px;
+  margin-top: 60px;
+  position: relative;
+  @include flex-container(flex-start, flex-start, nowrap);
+  gap: 40px;
+  margin-bottom: 30px;
 }

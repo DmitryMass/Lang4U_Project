@@ -36,3 +36,9 @@ export const ROUTE_POLICY = {
   privacePolicy: '/policy',
   agreement: '/useragreement',
 };
+
+export const ROUTES_USER = {
+  course: 'course',
+  main: '',
+  settings: 'personal info',
+};
