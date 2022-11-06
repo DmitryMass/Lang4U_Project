@@ -1,0 +1,49 @@
+@import '../../Styles/vars';
+
+.suggestions {
+  padding: 30px 0;
+}
+.suggestions__container {
+  @include container(1380px, 15px);
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.suggestions__info {
+  margin-bottom: 40px;
+  @include flex-container(space-between, center, nowrap);
+  gap: 40px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+.suggestions__img {
+  max-width: 400px;
+  width: 100%;
+  @media screen and (max-width: 992px) {
+    max-width: 350px;
+  }
+  & > img {
+    max-width: 100%;
+  }
+}
+
+.suggestions__formTitle {
+  @include text(24px, 32px, 600);
+  margin-bottom: 10px;
+  @media screen and (max-width: 992px) {
+    @include text(18px, 24px, 600);
+  }
+}
+
+.suggestions__formSubtitle {
+  @include text(16px, 21px, 400);
+  @media screen and (max-width: 768px) {
+    @include text(14px, 18px, 400);
+  }
+}

@@ -23,8 +23,8 @@ const items: MenuProps['items'] = [
   {
     key: '2',
     label: (
-      <Link to={ROUTES.PAYMENT} className={styles.dropdown__link}>
-        Умови оплати
+      <Link to={ROUTES.SUGGESTIONS} className={styles.dropdown__link}>
+        Пропозиції
       </Link>
     ),
   },

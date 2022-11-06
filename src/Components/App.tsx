@@ -26,6 +26,7 @@ import Admin from '../Pages/Admin/Admin';
 import { useGetCourseQuery } from '../Store/Api-Query/Courses/courses';
 import { useDispatch } from 'react-redux';
 import useActions from '../Store/hooks-store/actions';
+import Suggestions from '../Pages/Suggestions/Suggestions';
 
 const App: FC = () => {
   const location = useLocation();
@@ -57,6 +58,7 @@ const App: FC = () => {
           <Route path={ROUTES.SUPPORT} element={<Support />} />
           <Route path={ROUTES.FAQ} element={<Faq />} />
           <Route path={ROUTES.COURSESITEM} element={<CoursesItem />} />
+          <Route path={ROUTES.SUGGESTIONS} element={<Suggestions />} />
           <Route path={ROUTES.LOGIN} element={<Login />} />
           <Route path={ROUTES.REGISTRATION} element={<Registration />} />
           <Route path={ROUTES.NOTFOUND} element={<NotFound />} />
