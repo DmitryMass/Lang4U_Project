@@ -3,6 +3,7 @@ import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import { loginApi, logoutApi, registrationApi } from './Api-Query/Auth/auth';
 import { courseApi } from './Api-Query/Courses/courses';
 import { firstLessonApi } from './Api-Query/FirstLesson/firstLesson';
+import { supportApi } from './Api-Query/Support/Support';
 import { authSliceReducer, modalSliceReducer } from './Slices/authSlice';
 import { filterSliceReducer } from './Slices/filterPanelSlice';
 
@@ -16,6 +17,7 @@ const store = configureStore({
     [logoutApi.reducerPath]: logoutApi.reducer,
     [courseApi.reducerPath]: courseApi.reducer,
     [firstLessonApi.reducerPath]: firstLessonApi.reducer,
+    [supportApi.reducerPath]: supportApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -23,7 +25,8 @@ const store = configureStore({
       loginApi.middleware,
       logoutApi.middleware,
       courseApi.middleware,
-      firstLessonApi.middleware
+      firstLessonApi.middleware,
+      supportApi.middleware
     ),
 });
 

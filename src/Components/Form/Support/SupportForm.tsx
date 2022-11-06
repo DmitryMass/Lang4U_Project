@@ -5,9 +5,10 @@ import { contactsValidation } from '../ValidationScheme/ValidationContactsSchema
 
 import styles from './support-form.module.scss';
 import { useSupport } from '../../hooks/useSupport';
+import Loader from '../../Loader/Loader';
 
 const SupportForm: FC = () => {
-  const { formikHandleSubmit } = useSupport();
+  const { formikHandleSubmit, isLoading } = useSupport();
 
   return (
     <Formik
@@ -70,7 +71,7 @@ const SupportForm: FC = () => {
             />
           </label>
           <TypeButton modificator={'button__contacts'} type='submit'>
-            Залишити заявку
+            {isLoading ? <Loader /> : ' Залишити заявку'}
           </TypeButton>
         </form>
       )}
