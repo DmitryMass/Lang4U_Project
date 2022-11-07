@@ -14,7 +14,7 @@ import { ROUTES_COURSE } from '../Routes/routes';
 //     details: 'Дізнатись детальніше',
 //     price: 'Від 2000 грн',
 //     color: 'course__blue',
-//     link: ROUTES_COURSE.engEasy,
+// link: ROUTES_COURSE.engEasy,
 //     lessons: '30',
 //     task: '240',
 //     tests: '10',

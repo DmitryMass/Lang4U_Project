@@ -6,7 +6,7 @@ import useTypedSelector from '../../../../Store/hooks-store/useTypedSelector';
 import { useAdminActions } from '../../../hooks/useAdminActions';
 
 const ListOfCourses: FC = () => {
-  const { courses } = useTypedSelector((state) => state.filterSlice);
+  const { courses } = useTypedSelector((state: any) => state.filterSlice);
   const { handleDelete } = useAdminActions();
 
   return (
@@ -16,7 +16,7 @@ const ListOfCourses: FC = () => {
           const { title, modules, duration, lessons, task, tests, expert, id } =
             item;
           return (
-            <div key={id} className={styles.course}>
+            <div key={title} className={styles.course}>
               <div>
                 <p
                   className={`${styles.list__item} ${styles.list__item__title}`}

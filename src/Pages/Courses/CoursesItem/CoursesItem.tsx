@@ -22,6 +22,8 @@ const CoursesItem = () => {
   const { data, isLoading, isError } = useGetOneCourseQuery(id);
   const { courses } = useTypedSelector((state) => state.filterSlice);
 
+  console.log(data, id);
+
   const filteredCourses = courses
     .filter(
       (item: ICoursesList) =>
