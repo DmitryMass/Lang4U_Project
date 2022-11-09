@@ -43,6 +43,16 @@ export const courseApi = createApi({
       }),
       invalidatesTags: [{ type: 'Course', id: 'LIST' }],
     }),
+    bindCourse: build.mutation({
+      query: (body) => ({
+        url: '/course/bindcourse',
+        method: 'POST',
+        body,
+        headers: {
+          authorization: `${localStorage.getItem('user')}`,
+        },
+      }),
+    }),
   }),
 });
 
@@ -53,4 +63,5 @@ export const {
   useDeleteCourseMutation,
   useGetOneCourseQuery,
   useLazyGetCourseQuery,
+  useBindCourseMutation,
 } = courseApi;

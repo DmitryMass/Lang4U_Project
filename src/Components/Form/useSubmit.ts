@@ -45,12 +45,12 @@ export const useSubmit = (auth: any) => {
       const data: any = await auth(body);
       if (data?.data?.message === 'Ok') {
         if (data?.data?.role === 'Admin') {
-          localStorage.setItem('admin', 'true');
+          localStorage.setItem('admin', data?.data?.token);
           dispatch(loginSuccess());
           navigate('/admin');
           return;
         }
-        localStorage.setItem('user', 'true');
+        localStorage.setItem('user', data?.data?.token);
         dispatch(loginSuccess());
         navigate('/');
         return;

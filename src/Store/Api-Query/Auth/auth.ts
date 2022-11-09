@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const URL = 'http://localhost:3005/api';
+// credentials: 'include'
 
 export const registrationApi = createApi({
   reducerPath: 'registrationApi',
@@ -12,6 +13,7 @@ export const registrationApi = createApi({
         url: '/registration',
         method: 'POST',
         body,
+        credentials: 'include',
       }),
       invalidatesTags: ['Registration'],
     }),
@@ -21,7 +23,9 @@ export const registrationApi = createApi({
 export const loginApi = createApi({
   reducerPath: 'loginApi',
   tagTypes: ['Login'],
-  baseQuery: fetchBaseQuery({ baseUrl: URL }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: URL,
+  }),
   endpoints: (build) => ({
     login: build.mutation({
       query: (body) => ({
