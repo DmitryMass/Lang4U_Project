@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const UserSettings = () => {
+const UserSettings: FC = () => {
   return <div>UserSettings</div>;
 };
 

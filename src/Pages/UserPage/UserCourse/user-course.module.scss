@@ -1,0 +1,79 @@
+@import '../../../Styles/vars';
+
+.usercourse {
+  max-width: 850px;
+  width: 100%;
+}
+
+.course {
+  position: relative;
+  border-radius: 15px;
+  width: 100%;
+  background-color: #2b6297;
+  padding: 20px;
+}
+
+.course__title {
+  @include text(21px, 28px, 600);
+  color: $white;
+}
+
+.course__subtitle {
+  @include text(18px, 24px, 500);
+  color: $white;
+  margin-bottom: 20px;
+}
+
+.course__course {
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: $blue-main;
+  color: $white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: $white;
+    background-color: $blue-active;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.course__info {
+  @include text(14px, 18px, 500);
+  margin: 20px 0px 0px 0px;
+  color: $white;
+}
+
+.course__links {
+  padding-top: 20px;
+  & > a {
+    height: 50px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: $blue-opacity;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: $dark-blue;
+    @include text(14px, 16px, 500);
+    transition: all 0.2s ease-in;
+    &:first-child {
+      margin-right: 10px;
+    }
+    &:hover {
+      transition: all 0.2s ease-in-out;
+      background-color: $blue-hover;
+    }
+  }
+}
+
+.non__course {
+  @include text(16px, 24px, 500);
+  color: $red-active;
+  margin-bottom: 30px;
+}

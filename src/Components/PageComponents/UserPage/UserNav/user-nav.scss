@@ -1,12 +1,38 @@
-.ant-layout-sider {
-  background: transparent;
+@import '../../../../Styles/vars';
+
+.menu {
+  height: 100%;
 }
 
 .trigger {
   width: 100%;
+  background: $yellow-main;
+  padding: 8px 3px 8px 0px !important;
 }
 .trigger__active {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  background: $yellow-main;
+  padding: 8px 3px 8px 0px !important;
+}
+
+.ant-layout-sider-dark {
+  background: transparent;
+}
+
+.ant-menu,
+.ant-menu-dark {
+  background-color: $yellow-main !important;
+}
+
+.ant-menu-item-icon {
+  color: $black !important;
+}
+.ant-menu-item-icon {
+  color: $black !important;
+}
+
+.ant-menu-item-selected {
+  background-color: #c3e8f7 !important;
 }

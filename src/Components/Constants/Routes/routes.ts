@@ -40,5 +40,5 @@ export const ROUTE_POLICY = {
 export const ROUTES_USER = {
   course: 'course',
   main: '',
-  settings: 'personal info',
+  settings: 'info',
 };

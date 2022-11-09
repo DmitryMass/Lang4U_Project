@@ -1,9 +1,19 @@
 @import '../../Styles/vars';
 
 .userpage {
-  margin-top: 60px;
+  @include container(1380px, 15px);
+  position: relative;
+  margin-top: 25px;
   position: relative;
   @include flex-container(flex-start, flex-start, nowrap);
-  gap: 40px;
-  margin-bottom: 30px;
+  gap: 80px;
+  padding: 30px 0px;
+  background: #29abe247;
+  padding-right: 15px;
+  @media screen and (max-width: 768px) {
+    gap: 30px;
+  }
+  @media screen and (max-width: 576px) {
+    gap: 10px;
+  }
 }
