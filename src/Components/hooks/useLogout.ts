@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useLogoutUserMutation } from '../../Store/Api-Query/Auth/auth';
+import { userApi } from '../../Store/Api-Query/User/user';
 import useActions from '../../Store/hooks-store/actions';
 
 const useLogout = () => {
@@ -13,11 +14,13 @@ const useLogout = () => {
       if (await localStorage.user) {
         delete localStorage.user;
         dispatch(userOut());
+        dispatch(userApi.util.resetApiState());
         return;
       }
       if (await localStorage.admin) {
         delete localStorage.admin;
         dispatch(userOut());
+        dispatch(userApi.util.resetApiState());
         return;
       }
       alert('Сталася помилка.');

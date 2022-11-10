@@ -1,28 +1,23 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import Nav from '../../../Components/Navigation/Nav';
 import MainTitle from '../../../Components/Text/Titles/MainTitle';
 import EachCourse from './EachCourse';
 import Button from '../../../Components/Button/Button';
 
+import useTypedSelector from '../../../Store/hooks-store/useTypedSelector';
 import styles from './user-course.module.scss';
 
 const UserCourse: FC = () => {
-  const [cours, setCours] = useState(true);
-  const courses = [
-    {
-      id: 1,
-      course: '1',
-    },
-  ];
+  const { userCourse } = useTypedSelector((state) => state.userCourse);
 
   return (
     <div className={styles.usercourse}>
       <MainTitle modificator='userpage__title'>Ваші курси</MainTitle>
-      {cours ? (
+      {userCourse.length > 0 ? (
         <Nav
           modificator=''
-          items={courses}
-          renderItems={(item) => <EachCourse key={item.id} item={item} />}
+          items={userCourse}
+          renderItems={(item) => <EachCourse key={item.title} elem={item} />}
         />
       ) : (
         <div>

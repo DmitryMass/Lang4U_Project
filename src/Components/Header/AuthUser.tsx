@@ -14,7 +14,6 @@ const AuthUser: FC<IAuthUser> = ({ modificator }) => {
   const { user } = useTypedSelector((state) => state.userToken);
   const { handleLogout } = useLogout();
   const { handleCancel } = useModal();
-
   return (
     <>
       {user ? (

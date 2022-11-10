@@ -41,6 +41,7 @@ const App: FC = () => {
     }
   }, [location, data, dispatch, isSuccess, getCourses]);
 
+  // не забыть переделать локалсторедж на что-то более адекватное
   return (
     <div className={styles.app}>
       <div className={styles.app__container}>
