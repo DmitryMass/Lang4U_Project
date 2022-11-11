@@ -1,0 +1,60 @@
+@import '../../../Styles/vars';
+
+.settings {
+  padding: 20px 0;
+  width: 70%;
+  text-align: center;
+  &__title {
+    @include text(24px, 28px, 600);
+    margin-bottom: 20px;
+  }
+}
+
+.inputs__wrapper {
+  @include flex-container(flex-start, flex-start, nowrap);
+  gap: 15px;
+  margin-bottom: 20px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+.form__inputWrapper {
+  @include flex-container(center, center, wrap);
+  flex-direction: column;
+}
+.box__email {
+  margin-bottom: 20px;
+}
+.box {
+  &__age,
+  &__name,
+  &__city,
+  &__email,
+  &__surname {
+    width: 250px;
+    @media screen and (max-width: 576px) {
+      width: 230px;
+    }
+  }
+}
+.label {
+  &__age,
+  &__name,
+  &__city,
+  &__email,
+  &__surname {
+    @include flex-container(flex-start, flex-start, nowrap);
+    flex-direction: column;
+    width: 100%;
+    & > input {
+      margin-top: 8px;
+      border-radius: 12px;
+      border: none;
+      padding: 7px 10px;
+      width: 100%;
+      &:focus {
+        outline: 1px solid $blue-violet;
+      }
+    }
+  }
+}

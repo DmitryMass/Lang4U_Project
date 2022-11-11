@@ -15,7 +15,17 @@ export const userApi = createApi({
         },
       }),
     }),
+    updateUserInfo: build.mutation({
+      query: (body) => ({
+        url: '/user',
+        method: 'POST',
+        body,
+        headers: {
+          authorization: `${localStorage.getItem('user')}`,
+        },
+      }),
+    }),
   }),
 });
 
-export const { useGetUserInfoQuery, useLazyGetUserInfoQuery } = userApi;
+export const { useGetUserInfoQuery, useUpdateUserInfoMutation } = userApi;

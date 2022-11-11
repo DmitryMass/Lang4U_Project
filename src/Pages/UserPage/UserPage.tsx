@@ -7,10 +7,10 @@ import UserCourse from './UserCourse/UserCourse';
 import UserInfo from './UserInfo/UserInfo';
 import UserSettings from './UserSettings/UserSettings';
 
-import styles from './user-page.module.scss';
 import { useDispatch } from 'react-redux';
 import { useGetUserInfoQuery } from '../../Store/Api-Query/User/user';
 import useActions from '../../Store/hooks-store/actions';
+import styles from './user-page.module.scss';
 
 const UserPage: FC = () => {
   const dispatch = useDispatch();
@@ -41,7 +41,10 @@ const UserPage: FC = () => {
       <Routes>
         <Route path={ROUTES_USER.main} element={<UserInfo />} />
         <Route path={ROUTES_USER.course} element={<UserCourse />} />
-        <Route path={ROUTES_USER.settings} element={<UserSettings />} />
+        <Route
+          path={ROUTES_USER.settings}
+          element={<UserSettings data={data} />}
+        />
       </Routes>
     </section>
   );

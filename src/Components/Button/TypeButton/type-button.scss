@@ -3,7 +3,8 @@
 // Home page (section FirstLesson);
 .button__lesson,
 .button__contacts,
-.auth__btn {
+.auth__btn,
+.settings__btn {
   @include border(none, 8px);
   @include text(16px, 21px, 400);
   padding: 13.5px 20px;
@@ -17,7 +18,8 @@
 }
 
 .button__contacts,
-.auth__btn {
+.auth__btn,
+.settings__btn {
   background: $yellow-hover;
   color: $black;
   font-weight: 500;
@@ -26,7 +28,11 @@
     background: $yellow;
   }
 }
-
+.settings__btn {
+  max-width: 250px;
+  width: 100%;
+  margin: 0 auto;
+}
 .filter__btn {
   @include border(none, 8px);
   @include text(14px, 18px, 400);

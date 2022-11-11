@@ -13,7 +13,6 @@ export const registrationApi = createApi({
         url: '/registration',
         method: 'POST',
         body,
-        credentials: 'include',
       }),
       invalidatesTags: ['Registration'],
     }),
