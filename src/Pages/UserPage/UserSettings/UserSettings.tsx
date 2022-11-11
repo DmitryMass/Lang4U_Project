@@ -3,8 +3,9 @@ import { Field, Formik } from 'formik';
 import TypeButton from '../../../Components/Button/TypeButton/TypeButton';
 import Loader from '../../../Components/Loader/Loader';
 
-import styles from './user-settings.module.scss';
 import { useSettings } from '../../../Components/hooks/useSettings';
+import { settingsValidation } from '../../../Components/Form/ValidationScheme/ValidationSettings';
+import styles from './user-settings.module.scss';
 
 interface IUserSettingsProps {
   data: any;
@@ -24,7 +25,7 @@ const UserSettings: FC<IUserSettingsProps> = ({ data }) => {
           age: `${data?.age ? data?.age : ''}`,
         }}
         onSubmit={handleUpdateUserInfo}
-        validationSchema={''}
+        validationSchema={settingsValidation}
       >
         {({ handleSubmit, handleChange, handleBlur, values, errors }) => (
           <form onSubmit={handleSubmit}>

@@ -58,3 +58,16 @@
     }
   }
 }
+
+.error {
+  &__email,
+  &__surname,
+  &__name,
+  &__age,
+  &__city {
+    color: $red;
+    @include text(14px, 16px, 500);
+    text-align: left;
+    margin-bottom: 3px;
+  }
+}
