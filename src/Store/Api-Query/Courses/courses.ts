@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import ICoursesList from '../../../Types/courses-list-types';
-const URL = 'http://localhost:3005/api';
+// const URL = 'http://localhost:3005/api';
+const URL = 'https://lang4u-server.onrender.com/api';
 
 export const courseApi = createApi({
   reducerPath: 'getCoursesApi',
