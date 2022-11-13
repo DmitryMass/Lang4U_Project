@@ -31,6 +31,20 @@ NodeMailer (для отправки писем);
 JsonWebtoken / bcrypt (шифрование паролей, добавление токена)
 MongoDB / mongoose; (хранение данных)
 
+<!--  -->
+
+Preview
+![DESKTOP!](./src/Assets/ForGitHub/main.png)
+![DESKTOP!](./src/Assets/ForGitHub/admin.png)
+![DESKTOP!](./src/Assets/ForGitHub/course.png)
+![DESKTOP!](./src/Assets/ForGitHub/user-main.png)
+![DESKTOP!](./src/Assets/ForGitHub/mobile.png)
+![DESKTOP!](./src/Assets/ForGitHub/support.png)
+![DESKTOP!](./src/Assets/ForGitHub/register.png)
+![DESKTOP!](./src/Assets/ForGitHub/login.png)
+
+<!--  -->
+
 29/10/2022 проект в разработке
 
 временный деплой на netlify изменить все на хероку или ток бд
