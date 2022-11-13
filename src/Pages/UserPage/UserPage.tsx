@@ -21,7 +21,7 @@ const UserPage: FC = () => {
     if (!data) return;
     Promise.all(
       data?.course.map((url: string) =>
-        fetch(`http://localhost:3005/api/course/${url}`)
+        fetch(`https://lang4u-server.onrender.com/api/course/${url}`)
       )
     )
       .then((response) =>
