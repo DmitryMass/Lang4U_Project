@@ -20,19 +20,20 @@ import Login from '../Pages/Auth/Login/Login';
 import Registration from '../Pages/Auth/Registration/Registration';
 import NotFound from './NotFound/NotFound';
 
-import styles from './App.module.scss';
 import UserPage from '../Pages/UserPage/UserPage';
 import Admin from '../Pages/Admin/Admin';
 import { useGetCourseQuery } from '../Store/Api-Query/Courses/courses';
 import { useDispatch } from 'react-redux';
 import useActions from '../Store/hooks-store/actions';
 import Suggestions from '../Pages/Suggestions/Suggestions';
+import AlertComponent from './Error/ErrorComponent';
 
+import styles from './App.module.scss';
 const App: FC = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const { getCourses } = useActions();
-  const { data = [], isSuccess } = useGetCourseQuery([]);
+  const { data = [], isSuccess, isLoading } = useGetCourseQuery([]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -41,9 +42,16 @@ const App: FC = () => {
     }
   }, [location, data, dispatch, isSuccess, getCourses]);
 
-  // не забыть переделать локалсторедж на что-то более адекватное
   return (
     <div className={styles.app}>
+      {isLoading && (
+        <div className={styles.app__modal}>
+          <AlertComponent
+            type='warning'
+            message='Завантажую дані почекайте..'
+          />
+        </div>
+      )}
       <div className={styles.app__container}>
         <BackTop>
           <div className={styles.app__backTop}>
