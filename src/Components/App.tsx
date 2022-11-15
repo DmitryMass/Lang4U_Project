@@ -27,6 +27,7 @@ import { useDispatch } from 'react-redux';
 import useActions from '../Store/hooks-store/actions';
 import Suggestions from '../Pages/Suggestions/Suggestions';
 import AlertComponent from './Error/ErrorComponent';
+import Loader from './Loader/Loader';
 
 import styles from './App.module.scss';
 const App: FC = () => {
@@ -50,6 +51,7 @@ const App: FC = () => {
             type='warning'
             message='Завантажую дані почекайте..'
           />
+          <Loader />
         </div>
       )}
       <div className={styles.app__container}>
