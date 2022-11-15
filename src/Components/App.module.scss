@@ -27,4 +27,5 @@
   z-index: 5;
   @include flex-container(center, center, nowrap);
   flex-direction: column;
+  gap: 30px;
 }
