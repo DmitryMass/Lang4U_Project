@@ -26,15 +26,13 @@ import { useGetCourseQuery } from '../Store/Api-Query/Courses/courses';
 import { useDispatch } from 'react-redux';
 import useActions from '../Store/hooks-store/actions';
 import Suggestions from '../Pages/Suggestions/Suggestions';
-import AlertComponent from './Error/ErrorComponent';
-import Loader from './Loader/Loader';
 
 import styles from './App.module.scss';
 const App: FC = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const { getCourses } = useActions();
-  const { data = [], isSuccess, isLoading } = useGetCourseQuery([]);
+  const { data = [], isSuccess } = useGetCourseQuery([]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -45,15 +43,6 @@ const App: FC = () => {
 
   return (
     <div className={styles.app}>
-      {isLoading && (
-        <div className={styles.app__modal}>
-          <AlertComponent
-            type='warning'
-            message='Завантажую дані почекайте..'
-          />
-          <Loader />
-        </div>
-      )}
       <div className={styles.app__container}>
         <BackTop>
           <div className={styles.app__backTop}>

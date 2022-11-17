@@ -1,5 +1,6 @@
 import React, { FC, memo } from 'react';
 import TypeButton from '../../../../Components/Button/TypeButton/TypeButton';
+import AlertComponent from '../../../../Components/Error/ErrorComponent';
 import Messengers from '../../../../Components/Messengers/Messengers';
 import MainTitle from '../../../../Components/Text/Titles/MainTitle';
 
@@ -7,19 +8,27 @@ import styles from './about-course.module.scss';
 
 interface IAboutCourse {
   title: string | undefined;
+  isLoading?: boolean | null;
 }
 interface IAbout {
   text: string;
 }
 
-const AboutCourse: FC<IAboutCourse> = ({ title }) => {
+const AboutCourse: FC<IAboutCourse> = ({ title, isLoading }) => {
   const buttonTitle: any = title?.split(' ').slice(1).join(' ');
   const capitalize = (s: string) => s?.charAt(0).toUpperCase() + s?.slice(1);
   return (
     <section className={styles.about__section}>
       <div>
         <div className={styles.about__titleWrapper}>
-          <MainTitle modificator='main__title'>{title}</MainTitle>
+          {isLoading ? (
+            <AlertComponent
+              type='warning'
+              message='Завантажую дані очікуйте...'
+            />
+          ) : (
+            <MainTitle modificator='main__title'>{title}</MainTitle>
+          )}
         </div>
         <MainTitle modificator='contacts__title'>Про курс</MainTitle>
         <p className={styles.about__subtitle}>Після проходження курсу:</p>

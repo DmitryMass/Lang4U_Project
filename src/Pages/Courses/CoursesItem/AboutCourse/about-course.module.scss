@@ -7,6 +7,13 @@
 
 .about__titleWrapper {
   max-width: 500px;
+  min-height: 122px;
+  @media screen and (max-width: 992px) {
+    min-height: 98px;
+  }
+  @media screen and (max-width: 576px) {
+    min-height: 82px;
+  }
 }
 
 .about__subtitle {
