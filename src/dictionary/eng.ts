@@ -194,4 +194,9 @@ learning foreign languages.`,
     'The clarity of our position is clear: consultation with a broad asset clearly defines each participant as capable of making their own decisions about the progress of the professional community. As already mentioned several times, the conclusions made on the basis of Internet analytics call us to new achievements, which, in turn, should be combined into whole clusters of their own kind. As only part of the big picture, the clear signs of the victory of institutionalization have been subjected to a whole series of independent studies.',
   supportWrite: 'Write to the support service',
   supportRequest: 'Leave a request and we will try to help you',
+  //   FAQ PAGE
+  faqSubtitle: 'Frequently asked questions',
+  faqBoxTitle: 'We are always happy to help!',
+  faqBoxContact: 'Contact our student support team with any questions.',
+  faqSendQuestion: 'Ask a question',
 };
