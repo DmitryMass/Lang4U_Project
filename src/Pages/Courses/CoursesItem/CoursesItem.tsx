@@ -12,6 +12,8 @@ import WhyFast from './WhyFast/WhyFast';
 import TypeButton from '../../../Components/Button/TypeButton/TypeButton';
 import Loader from '../../../Components/Loader/Loader';
 import { useCourseItem } from '../../../Components/hooks/courseItemHook';
+import { useTranslation } from 'react-i18next';
+
 import styles from './courses-item.module.scss';
 
 type TCoursesItemParams = {
@@ -19,6 +21,8 @@ type TCoursesItemParams = {
 };
 
 const CoursesItem: FC = () => {
+  const { t } = useTranslation();
+
   const { id } = useParams<TCoursesItemParams>();
   const { data, isLoading, isError } = useGetOneCourseQuery(id);
   const {
@@ -35,7 +39,7 @@ const CoursesItem: FC = () => {
     <div className={styles.item__container}>
       <div className={styles.item__about}>
         {isError && (
-          <AlertComponent type='error' message='Вибачте сервер збожеволів.' />
+          <AlertComponent type='error' message={`${t('courseWarning')}`} />
         )}
         <div className={styles.about__container}>
           <AboutCourse isLoading={isLoading} title={data?.title} />
@@ -43,9 +47,11 @@ const CoursesItem: FC = () => {
         <div className={`${styles.item__course} ${boxColor}`}>
           <div className={styles.item__priceWrapper}>
             <div>
-              <p className={styles.item__priceTitle}>Вартість</p>
+              <p className={styles.item__priceTitle}>{t('price')}</p>
               <p className={styles.item__price}>
-                {data?.price ? data?.price : 'Від 0000 грн'}
+                {data?.price
+                  ? `${t('priceFrom')} ${data?.price} ${t('uah')}`
+                  : '0000'}
               </p>
             </div>
             <div>
@@ -65,26 +71,27 @@ const CoursesItem: FC = () => {
           </div>
           <div className={styles.item__infoWrapper}>
             <p className={styles.item__info}>
-              {data?.lessons ? data?.lessons : '00'} <span>Уроків</span>
+              {data?.lessons ? data?.lessons : '00'}{' '}
+              <span>{t('homeCourseLessons')}</span>
             </p>
             <p className={styles.item__info}>
-              {data?.task ? data?.task : '00'} <span>Завдань</span>
+              {data?.task ? data?.task : '00'} <span>{t('tasks')}</span>
             </p>
             <p className={styles.item__info}>
-              {data?.tests ? data?.tests : '00'} <span>Тестів</span>
+              {data?.tests ? data?.tests : '00'} <span>{t('tests')}</span>
             </p>
             <p className={styles.item__info}>
               {data?.expert ? data?.expert : '00'}{' '}
-              <span>Занять із експертом</span>
+              <span>{t('lessonsWithExpert')}</span>
             </p>
             {isSuccess && (
-              <AlertComponent
-                message='Успіх. Курс додано в особистий кабінет.'
-                type='success'
-              />
+              <AlertComponent message={`${t('successAdd')}`} type='success' />
             )}
             {isBindError && (
-              <AlertComponent message='Ви вже маєте такий курс' type='error' />
+              <AlertComponent
+                message={`${t('courseAlreadyExist')}`}
+                type='error'
+              />
             )}
           </div>
           {isBindLoading && <Loader />}
@@ -94,12 +101,12 @@ const CoursesItem: FC = () => {
             handleClick={handleAddedCourse}
             modificator={'course__item'}
           >
-            {user ? 'Додати курс в ОК' : 'Записатися на курс'}
+            {user ? `${t('addCourse')}` : `${t('signUpForACourse')}`}
           </TypeButton>
         </div>
       </div>
       <WhyFast />
-      <MainTitle modificator='contacts__title'>Схожі курси</MainTitle>
+      <MainTitle modificator='contacts__title'>{t('similarCourses')}</MainTitle>
       <div className={styles.item__similar}>
         {filteredCourses.map((item: ICoursesList) => (
           <CourseSwiperItem key={item.title} item={item} />

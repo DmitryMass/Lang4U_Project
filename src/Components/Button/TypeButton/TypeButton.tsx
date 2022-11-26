@@ -5,7 +5,7 @@ interface ITypeButton {
   type?: 'button' | 'submit' | 'reset' | undefined;
   handleClick?: () => void;
   modificator: string;
-  children?: string | React.ReactElement;
+  children?: string | React.ReactElement | any;
 }
 
 const TypeButton: FC<ITypeButton> = ({

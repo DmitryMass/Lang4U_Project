@@ -3,6 +3,7 @@ import TypeButton from '../../../../Components/Button/TypeButton/TypeButton';
 import AlertComponent from '../../../../Components/Error/ErrorComponent';
 import Messengers from '../../../../Components/Messengers/Messengers';
 import MainTitle from '../../../../Components/Text/Titles/MainTitle';
+import { useTranslation } from 'react-i18next';
 
 import styles from './about-course.module.scss';
 
@@ -15,36 +16,36 @@ interface IAbout {
 }
 
 const AboutCourse: FC<IAboutCourse> = ({ title, isLoading }) => {
+  const { t } = useTranslation();
+
   const buttonTitle: any = title?.split(' ').slice(1).join(' ');
   const capitalize = (s: string) => s?.charAt(0).toUpperCase() + s?.slice(1);
+  const readyBtnTitle = capitalize(buttonTitle);
   return (
     <section className={styles.about__section}>
       <div>
         <div className={styles.about__titleWrapper}>
           {isLoading ? (
-            <AlertComponent
-              type='warning'
-              message='Завантажую дані очікуйте...'
-            />
+            <AlertComponent type='warning' message={`${t('warning')}`} />
           ) : (
-            <MainTitle modificator='main__title'>{title}</MainTitle>
+            <MainTitle modificator='main__title'>{`${t(title!)}`}</MainTitle>
           )}
         </div>
-        <MainTitle modificator='contacts__title'>Про курс</MainTitle>
-        <p className={styles.about__subtitle}>Після проходження курсу:</p>
+        <MainTitle modificator='contacts__title'>{t('aboutCourse')}</MainTitle>
+        <p className={styles.about__subtitle}>{t('afterCourse')}</p>
         <ul>
           {about.map(({ text }) => (
             <li key={text} className={styles.about__text}>
-              {text}
+              {t(text)}
             </li>
           ))}
         </ul>
         <div className={styles.about__bottom}>
           <TypeButton modificator='about__course'>
-            {capitalize(buttonTitle)}
+            {t(readyBtnTitle)}
           </TypeButton>
           <div className={styles.about__messengers}>
-            <p>Поділитися:</p>
+            <p className={styles.about__share}>{t('share')}</p>
             <Messengers modificator='course' />
           </div>
         </div>
@@ -55,16 +56,16 @@ const AboutCourse: FC<IAboutCourse> = ({ title, isLoading }) => {
 
 const about: IAbout[] = [
   {
-    text: 'легко розповісте про себе, уявіть свою компанію',
+    text: 'afterCourseFirst',
   },
   {
-    text: 'зможете підтримати розмову і легко орієнтуватися в побутових ситуаціях',
+    text: 'afterCourseSecond',
   },
   {
-    text: 'легко знайомитися та спілкуватися з оточуючими',
+    text: 'afterCourseThird',
   },
   {
-    text: 'Ви ніколи не загубитеся в мовному середовищі!',
+    text: 'afterCourseFour',
   },
 ];
 
