@@ -221,4 +221,6 @@ learning foreign languages.`,
   password: 'Password',
   noAcc: "Don't have an account?",
   signUp: 'Sign up',
+  confirmPassword: 'Confirm password',
+  accExist: 'Already have an account ?',
 };

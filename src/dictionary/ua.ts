@@ -231,4 +231,6 @@ export const ua = {
   password: 'Пароль',
   noAcc: 'Немає аккаунту ?',
   signUp: 'Зареєструватися',
+  confirmPassword: 'Підтвердити пароль',
+  accExist: 'Вже є аккаунт ?',
 };
