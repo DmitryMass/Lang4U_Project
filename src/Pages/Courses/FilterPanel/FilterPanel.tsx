@@ -1,11 +1,13 @@
 import React, { FC } from 'react';
 import TypeButton from '../../../Components/Button/TypeButton/TypeButton';
 import useFilter from '../../../Components/hooks/useFilter';
+import { useTranslation } from 'react-i18next';
 
 type IFilterPanel = string[];
 
 const FilterPanel: FC = () => {
   const { chooseCategory } = useFilter();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -17,7 +19,7 @@ const FilterPanel: FC = () => {
             modificator='filter__btn'
             type='button'
           >
-            {item}
+            {`${t(item)}`}
           </TypeButton>
         );
       })}

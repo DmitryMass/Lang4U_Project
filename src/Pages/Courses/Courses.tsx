@@ -7,10 +7,13 @@ import CourseSwiperItem from '../../Components/Swiper/CourseSwiper/CourseSwiperI
 import { useGetCourseQuery } from '../../Store/Api-Query/Courses/courses';
 import AlertComponent from '../../Components/Error/ErrorComponent';
 import useTypedSelector from '../../Store/hooks-store/useTypedSelector';
+import { useTranslation } from 'react-i18next';
 
 import styles from './courses.module.scss';
 
 const Courses: FC = () => {
+  const { t } = useTranslation();
+
   const { courses, filteredCourses } = useTypedSelector(
     (state) => state.filterSlice
   );
@@ -19,17 +22,17 @@ const Courses: FC = () => {
   return (
     <div className={styles.filter}>
       <div className={styles.filter__titleWrapper}>
-        <MainTitle modificator='contacts__title'>Курси</MainTitle>
+        <MainTitle modificator='contacts__title'>{t('courses')}</MainTitle>
       </div>
       <div className={styles.filterPanel}>
         <FilterPanel />
       </div>
       <div>
         {isError && (
-          <AlertComponent type='error' message='Вибачте сервер збожеволів.' />
+          <AlertComponent type='error' message={`${t('courseWarning')}`} />
         )}
         {courses.length <= 0 ? (
-          <AlertComponent type='warning' message='Очікуйте будь-ласка.' />
+          <AlertComponent type='warning' message={`${t('wait')}`} />
         ) : (
           <Nav
             modificator='course__wrapper'

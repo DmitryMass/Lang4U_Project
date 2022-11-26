@@ -4,29 +4,29 @@ import { ROUTES } from '../Routes/routes';
 export const footerEducation: IFooterEducation[] = [
   {
     link: ROUTES.COURSES,
-    title: 'Всі мови',
+    title: 'courses',
   },
   {
     link: ROUTES.PAYMENT,
-    title: 'Умови оплати',
+    title: 'payment',
   },
   {
     link: ROUTES.REVIEWS,
-    title: 'Відгуки',
+    title: 'reviews',
   },
 ];
 
 export const footerInfo: IFooterInfo[] = [
   {
     link: ROUTES.ABOUTUS,
-    title: 'Про нас',
+    title: 'aboutUs',
   },
   {
     link: ROUTES.FAQ,
-    title: 'Поширені питання',
+    title: 'faq',
   },
   {
     link: ROUTES.CONTACTS,
-    title: 'Контакти',
+    title: 'contacts',
   },
 ];

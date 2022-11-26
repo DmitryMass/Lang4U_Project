@@ -1,8 +1,11 @@
 export const eng = {
+  // right
+  rights: 'All rights reserved',
   //general
   warning: 'Loading data, please wait..',
   courseWarning: 'Sorry server gone crazy.',
-
+  wait: 'Wait please.',
+  //
   courses: 'Courses',
   aboutUs: 'About us',
   contacts: 'Contacts',
@@ -135,4 +138,14 @@ export const eng = {
   questionThird: 'How fast will I get results?',
   questionFour: 'When can I start my studies?',
   questionFive: 'How is learning in individual classes?',
+  //   footer
+  footerTitle: `Lang4U is an interactive platform for easy, convenient and fast
+learning foreign languages.`,
+  info: 'Information',
+  //   COURSES PAGE
+  Всі: 'All',
+  Англійська: 'English',
+  Німецька: 'German',
+  Іспанська: 'Spain',
+  Китайська: 'China',
 };
