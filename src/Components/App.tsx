@@ -27,7 +27,9 @@ import { useDispatch } from 'react-redux';
 import useActions from '../Store/hooks-store/actions';
 import Suggestions from '../Pages/Suggestions/Suggestions';
 
+import '../Utils/i18n';
 import styles from './App.module.scss';
+
 const App: FC = () => {
   const location = useLocation();
   const dispatch = useDispatch();

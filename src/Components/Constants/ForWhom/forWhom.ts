@@ -9,42 +9,38 @@ import { IForWhom } from '../../../Types/for-whom-types';
 export const forWhom: IForWhom[] = [
   {
     logo: `${complete}`,
-    human: 'Школярам',
-    description: 'Скласти випускні іспити або вступити до ВНЗ.',
+    human: 'schoolchildren',
+    description: 'schoolchildrenDesc',
     color: 'item__violet',
   },
   {
     logo: `${hat}`,
-    human: 'Студентам',
-    description:
-      'Переїхати на навчання в іншу країну або знайти високооплачувану роботу',
+    human: 'students',
+    description: 'studentsDesc',
     color: 'item__blue',
   },
   {
     logo: `${geo}`,
-    human: 'Емігрантам',
-    description:
-      'Адаптуватися в новій країні, створити конкурентну перевагу та працевлаштуватися',
+    human: 'emigrant',
+    description: 'emigrantDesc',
     color: 'item__yellow',
   },
   {
     logo: `${message}`,
-    human: 'Комунікабельним',
-    description: `Створити щасливу сім'ю з іноземцем і інтегруватися в нове суспільство`,
+    human: 'comunicative',
+    description: `comunicativeDesc`,
     color: 'item__red',
   },
   {
     logo: `${backpack}`,
-    human: 'Бізнесменам',
-    description:
-      'Завести полезные знакомства среди иностранцев и масштабировать бизнес',
+    human: 'buisnes',
+    description: 'buisnesDesc',
     color: 'item__blue',
   },
   {
     logo: `${ship}`,
-    human: 'Мандрівникам',
-    description:
-      'Вільно спілкуватися та знаходити нових друзів, вирішувати побутові питання та спірні ситуації',
+    human: 'travel',
+    description: 'travelDesc',
     color: 'item__violet',
   },
 ];

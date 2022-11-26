@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import ICoursesList from '../../../../Types/courses-list-types';
 import { ROUTES } from '../../../Constants/Routes/routes';
+import { useTranslation } from 'react-i18next';
 
 import './course-swiper-item.scss';
 
@@ -11,8 +12,10 @@ interface ICourseItemProps {
 }
 
 const CourseSwiperItem: FC<ICourseItemProps> = ({ item }) => {
-  const { details, duration, logo, modules, price, title, color, link } = item;
+  const { details, lessons, logo, modules, price, title, color, link } = item;
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
   return (
     <div className={`course__box ${color}`}>
       <div>
@@ -23,13 +26,13 @@ const CourseSwiperItem: FC<ICourseItemProps> = ({ item }) => {
           aria-label='flag'
         />
       </div>
-      <h3 className={'course__title'}>{title}</h3>
+      <h3 className={'course__title'}>{t(title)}</h3>
       <div className={'course__info'}>
         <p className={'course__duration'}>
-          Тривалість: <span>{duration}</span>
+          {t('homeCourseLessons')} <span>{lessons}</span>
         </p>
         <p className={'course__modules'}>
-          Модулей: <span>{modules}</span>
+          {t('homeCourseModules')} <span>{modules}</span>
         </p>
       </div>
       <div className={'course__price'}>
@@ -37,10 +40,12 @@ const CourseSwiperItem: FC<ICourseItemProps> = ({ item }) => {
           className={'course__link'}
           onClick={() => navigate(`${ROUTES.COURSES}/${link}`)}
         >
-          {details}
+          {t(details)}
           <ArrowRightOutlined />
         </div>
-        <p>{price}</p>
+        <p>
+          {t('priceFrom')} {price} {t('uah')}
+        </p>
       </div>
     </div>
   );

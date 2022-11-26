@@ -2,11 +2,13 @@ import React, { FC } from 'react';
 import { HomeOutlined } from '@ant-design/icons';
 import { Breadcrumb } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-import './tabs.scss';
 import { ROUTES } from '../Constants/Routes/routes';
+import './tabs.scss';
 
 const Tabs: FC = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const breadCrumbView = () => {
     const { pathname: name } = location;
@@ -25,13 +27,16 @@ const Tabs: FC = () => {
             </Breadcrumb.Item>
           ) : null}
           {pathnames.map((name, index) => {
+            console.log(name);
             const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
             const isLast = index === pathnames.length - 1;
             return isLast ? (
-              <Breadcrumb.Item key={name}>{capatilize(name)}</Breadcrumb.Item>
+              <Breadcrumb.Item key={name}>
+                {capatilize(t(`${name}`))}
+              </Breadcrumb.Item>
             ) : (
               <Breadcrumb.Item key={name}>
-                <Link to={`${routeTo}`}>{capatilize(name)}</Link>
+                <Link to={`${routeTo}`}>{capatilize(t(`${name}`))}</Link>
               </Breadcrumb.Item>
             );
           })}

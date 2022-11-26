@@ -4,14 +4,14 @@ import { ROUTES } from '../Routes/routes';
 export const headerLinks: IHeaderLinks[] = [
   {
     link: ROUTES.COURSES,
-    title: 'Курси',
+    title: 'courses',
   },
   {
     link: ROUTES.ABOUTUS,
-    title: 'Про нас',
+    title: 'aboutUs',
   },
   {
     link: ROUTES.CONTACTS,
-    title: 'Контакти',
+    title: 'contacts',
   },
 ];

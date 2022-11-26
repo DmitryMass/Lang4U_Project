@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { IHeaderLinks } from '../../Types/header-links-types';
 import { headerLinks } from '../Constants/Header-Nav/header-links';
 import HeaderDD from '../DropDowns/Header-DD/header-dd';
+import LangBtn from '../Lang/LangBtn/LangBtn';
 import Logo from '../Logo/Logo';
 import Nav from '../Navigation/Nav';
 import AuthUser from './AuthUser';
@@ -34,6 +35,7 @@ const Header: FC = () => {
         <div className={styles.header__btns}>
           <AuthUser modificator='header__login' />
         </div>
+        <LangBtn />
       </header>
     </div>
   );

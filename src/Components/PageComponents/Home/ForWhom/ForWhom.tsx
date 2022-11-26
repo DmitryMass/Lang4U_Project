@@ -8,24 +8,27 @@ import ForWhomItem from './ForWhomItem/ForWhomItem';
 
 import question from '../../../../Assets/Icons/question.svg';
 import MainTitle from '../../../Text/Titles/MainTitle';
+import { useTranslation } from 'react-i18next';
+
 import styles from './for-whom.module.scss';
 
 const ForWhom: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className={styles.forWhom}>
       <div className={styles.forWhom__question}>
         <object data={question} type='' aria-label='question' />
       </div>
       <div className={styles.forWhom__info}>
-        <MainTitle modificator='forWhom__title'>Кому підійде</MainTitle>
+        <MainTitle modificator='forWhom__title'>{t('forWhom')}</MainTitle>
         <p className={styles.forWhom__subtitle}>Lang4U</p>
         <p className={styles.forWhom__text}>
-          <span className={styles.text__span}>Lang4U</span> підійде всім, хто
-          хоче за короткий термін якісно змінити своє життя, освоївши іноземну
-          мову.{' '}
+          <span className={styles.text__span}>Lang4U</span>{' '}
+          {t('forWhomSubtitle')}{' '}
         </p>
         <Button
-          children='Спробувати безкоштовно'
+          children={`${t('tryToFree')}`}
           route={ROUTES.REGISTRATION}
           modificator={'main__free'}
         />

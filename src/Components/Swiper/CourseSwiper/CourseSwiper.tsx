@@ -5,23 +5,26 @@ import CourseSwiperItem from './CourseSwiperItem/CourseSwiperItem';
 import Button from '../../Button/Button';
 import { ROUTES } from '../../Constants/Routes/routes';
 import MainTitle from '../../Text/Titles/MainTitle';
-import styles from './course-swiper.module.scss';
 import useTypedSelector from '../../../Store/hooks-store/useTypedSelector';
 import { useGetCourseQuery } from '../../../Store/Api-Query/Courses/courses';
 import AlertComponent from '../../Error/ErrorComponent';
+import { useTranslation } from 'react-i18next';
+
+import styles from './course-swiper.module.scss';
 
 const CourseSwiper = () => {
   const { courses } = useTypedSelector((state) => state.filterSlice);
   const { isError } = useGetCourseQuery([]);
+  const { t } = useTranslation();
 
   return (
     <section className={styles.course__swiper}>
       <div className={styles.course__wrapper}>
         <MainTitle modificator='courses__title'>
-          Курси іноземної мови для будь-якого рівня
+          {t('homeCourseTitle')}
         </MainTitle>
         <Button
-          children='Всі курси'
+          children={`${t('allCourses')}`}
           route={ROUTES.COURSES}
           modificator={'course__courses'}
         />
@@ -53,7 +56,7 @@ const CourseSwiper = () => {
         className='mySwiper'
       >
         {isError && (
-          <AlertComponent type='error' message='Вибачте сервер збожеволів.' />
+          <AlertComponent type='error' message={`${t('courseWarning')}`} />
         )}
         {courses.map((elem) => (
           <SwiperSlide key={elem.title}>

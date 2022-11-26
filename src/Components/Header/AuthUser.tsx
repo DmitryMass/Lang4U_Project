@@ -4,6 +4,8 @@ import Button from '../Button/Button';
 import { ROUTES } from '../Constants/Routes/routes';
 import useModal from '../hooks/modal';
 import useLogout from '../hooks/useLogout';
+import { useTranslation } from 'react-i18next';
+
 import userLogo from '../../Assets/Icons/user.svg';
 
 interface IAuthUser {
@@ -11,6 +13,8 @@ interface IAuthUser {
 }
 
 const AuthUser: FC<IAuthUser> = ({ modificator }) => {
+  const { t } = useTranslation();
+
   const { user } = useTypedSelector((state) => state.userToken);
   const { handleLogout } = useLogout();
   const { handleCancel } = useModal();
@@ -19,7 +23,7 @@ const AuthUser: FC<IAuthUser> = ({ modificator }) => {
       {user ? (
         <>
           <Button
-            children={'Вийти'}
+            children={`${t('logout')}`}
             modificator={modificator}
             route={ROUTES.HOME}
             handleClick={() => {
@@ -46,7 +50,7 @@ const AuthUser: FC<IAuthUser> = ({ modificator }) => {
         </>
       ) : (
         <Button
-          children={'Увійти'}
+          children={`${t('signIn')}`}
           modificator={modificator}
           route={ROUTES.LOGIN}
           handleClick={() => {
