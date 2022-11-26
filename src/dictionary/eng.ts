@@ -92,4 +92,47 @@ export const eng = {
   travel: 'For Travelers',
   travelDesc:
     'Communicate freely and find new friends, solve household issues and controversial situations',
+  // Home page methodology section
+  methodologyTitle: 'An effective method of language learning with',
+  methodologyListFirst:
+    'You independently choose a convenient mode and time for completing tasks',
+  methodologyListSecond:
+    'Modern effective teaching methods guarantee language learning at the highest possible level in a short period of time',
+  methodologyListThird:
+    'Full automation allows us to provide the lowest price - 2, 3, or even 5 times cheaper than other language schools.',
+  // Home page (How it works section)
+  howItWorksTitle: 'How does it work?',
+  choice: 'Choice the course',
+  choiceDesc: 'Choose the language course you want, or get a free lesson.',
+
+  afterRegistration: 'After choosing the required course, register',
+  study: 'Studying',
+  studyDesc:
+    'It is all. You will have open access to the course in your personal account.',
+  // FIRST LESSON GENERAL SECTION
+  freeLessonTitle: `Free lesson from Lang4U. Enter your email and we will send the details.`,
+  email: 'Email',
+  emailPlaceholder: 'Type your email',
+  freeLessonBtn: 'Send',
+  agreement: 'By submitting the application, I agree with',
+  politic: 'privacy policy',
+  userAgreementLink: 'user agreement',
+  and: 'та',
+  //   free lesson validation
+  "Пошта обов'язкове поле": 'Email is required field',
+  'Приклад: jimmy@gmail.com': 'Example: jimmy@gmail.com',
+  'Мінімум 4 символи': 'Minimum 4 symbols',
+  'Максимум 30 символів': 'Maximum 30 symbols',
+  "Обов'язковий маркер": 'Required checkbox',
+  //FAQ SECTION
+  faqTitle: 'We answer frequently asked questions',
+  ask: 'Ask a question',
+  questionFirst: 'How is learning on online courses?',
+  answerFirst:
+    'Training takes place in the format of video lectures on our interactive platform. After purchasing the course, you immediately receive a letter in the mail with access to your personal account, in which all the lessons of the purchased course are already open. Each lesson consists of a video lecture on the topic and several dozen interactive tasks to practice the material.',
+  questionSecond:
+    'I buy a package of lessons or an online course, how long is it valid for?',
+  questionThird: 'How fast will I get results?',
+  questionFour: 'When can I start my studies?',
+  questionFive: 'How is learning in individual classes?',
 };

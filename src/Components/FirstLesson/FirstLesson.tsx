@@ -8,18 +8,21 @@ import TypeButton from '../Button/TypeButton/TypeButton';
 import { Link } from 'react-router-dom';
 import { ROUTE_POLICY } from '../Constants/Routes/routes';
 import MainTitle from '../Text/Titles/MainTitle';
-import styles from './first-lesson.module.scss';
 import { useFirstLesson } from '../hooks/useFirstLesson';
 import Loader from '../Loader/Loader';
+import { useTranslation } from 'react-i18next';
+
+import styles from './first-lesson.module.scss';
 
 const FirstLesson: FC = () => {
+  const { t } = useTranslation();
+
   const { formikHandleSubmit, isLoading } = useFirstLesson();
   return (
     <section className={styles.lesson}>
       <div className={styles.lesson__free}>
         <MainTitle modificator='lesson__title'>
-          Безкоштовний урок від Lang4U. Вкажіть свою пошту і ми надішлемо
-          деталі.
+          {t('freeLessonTitle')}
         </MainTitle>
         <Formik
           initialValues={{ email: '', rules: false }}
@@ -30,10 +33,10 @@ const FirstLesson: FC = () => {
             <form onSubmit={handleSubmit}>
               <div className={styles.lesson__emailBox}>
                 {errors.email && (
-                  <div className={styles.input__error}>{errors.email}</div>
+                  <div className={styles.input__error}>{t(errors.email)}</div>
                 )}
                 <label className={styles.input__label} htmlFor='email'>
-                  Пошта:
+                  {t('email')}:
                   <Field
                     className={styles.formik__input}
                     id='email'
@@ -42,16 +45,18 @@ const FirstLesson: FC = () => {
                     onBlur={handleBlur}
                     value={values.email}
                     name='email'
-                    placeholder='Ваша пошта'
+                    placeholder={`${t('emailPlaceholder')}`}
                   />
                 </label>
                 <TypeButton modificator={'button__lesson'} type='submit'>
-                  {isLoading ? <Loader /> : 'Відправити'}
+                  {isLoading ? <Loader /> : `${t('freeLessonBtn')}`}
                 </TypeButton>
               </div>
               <div className={styles.lesson__rulesBox}>
                 {errors.rules && (
-                  <div className={styles.checkbox__error}>{errors.rules}</div>
+                  <div className={styles.checkbox__error}>
+                    {t(errors.rules)}
+                  </div>
                 )}
                 <Field
                   className={styles.formik__checkbox}
@@ -60,13 +65,11 @@ const FirstLesson: FC = () => {
                   name='rules'
                 />
                 <p className={styles.checkbox__label}>
-                  Надсилаючи заявку, я погоджуюсь з{' '}
-                  <Link to={ROUTE_POLICY.privacePolicy}>
-                    політикою конфіденційності
-                  </Link>{' '}
-                  та{' '}
+                  {t('agreement')}{' '}
+                  <Link to={ROUTE_POLICY.privacePolicy}>{t('politic')}</Link>{' '}
+                  {t('and')}{' '}
                   <Link to={ROUTE_POLICY.agreement}>
-                    користувальницькою угодою
+                    {t('userAgreementLink')}
                   </Link>
                 </p>
               </div>

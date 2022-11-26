@@ -1,14 +1,17 @@
 import React from 'react';
-import styles from './methodology.module.scss';
+import { useTranslation } from 'react-i18next';
 
 import methodologyImg from '../../../../Assets/Images/methodology.jpg';
 import MainTitle from '../../../Text/Titles/MainTitle';
+import styles from './methodology.module.scss';
 
 interface IMethodologyList {
   text: string;
 }
 
 const Methodology = () => {
+  const { t } = useTranslation();
+
   return (
     <section className={styles.methodology}>
       <div className={styles.methodology__img}>
@@ -19,13 +22,13 @@ const Methodology = () => {
           span={<span className={styles.methodology__company}>Lang4U</span>}
           modificator='methodology__title'
         >
-          Ефективна методика вивчення мови з
+          {t('methodologyTitle')}
         </MainTitle>
         <span className={styles.methodology__company}>Lang4U</span>
         <ul>
           {methodologyList.map(({ text }) => (
             <li key={text} className={styles.methodology__list}>
-              {text}
+              {t(text)}
             </li>
           ))}
         </ul>
@@ -35,13 +38,13 @@ const Methodology = () => {
 };
 const methodologyList: IMethodologyList[] = [
   {
-    text: 'Самостійно вибираєте зручний режим та час проходження завдань',
+    text: 'methodologyListFirst',
   },
   {
-    text: 'Сучасна ефективна методика навчання гарантує освоєння мови на максимально високому рівні за короткий термін',
+    text: 'methodologyListSecond',
   },
   {
-    text: 'Повна автоматизація дозволяє нам надавати найнижчу ціну - у 2, 3, а то й у 5 разів дешевше за інші мовні школи.',
+    text: 'methodologyListThird',
   },
 ];
 
