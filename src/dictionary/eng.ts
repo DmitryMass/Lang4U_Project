@@ -122,6 +122,9 @@ export const eng = {
   userAgreementLink: 'user agreement',
   and: 'та',
   //   free lesson validation
+  'Максимум 25 символів': 'Maximum 25 characters',
+  'Цифри від 6 до 99': 'Numbers from 6 to 99',
+  'Максимум 2 символів': 'Minimum 2 characters',
   "Пошта обов'язкове поле": 'Email is required field',
   'Приклад: jimmy@gmail.com': 'Example: jimmy@gmail.com',
   'Мінімум 4 символи': 'Minimum 4 characters',
@@ -223,4 +226,25 @@ learning foreign languages.`,
   signUp: 'Sign up',
   confirmPassword: 'Confirm password',
   accExist: 'Already have an account ?',
+  //
+  //ADMIN AND USER PANEL
+  adminTitle: 'Administrator panel',
+  userMainPage: 'Main',
+  userSettings: 'Settings',
+  greeting: 'Welcome to',
+  achieveTitle:
+    'Achieve your goals with original game techniques from native speakers',
+  lessons: 'Lessons',
+  teacherLesson:
+    'The lesson with the teacher takes place individually. The teacher himself determines the time of the meeting and informs the student about it 5 days in advance.',
+  homework: 'Homework',
+  additional: 'Addition',
+  noOneCourse: 'You have no courses yet',
+  toTheCourses: 'To the courses',
+  yoursCourse: 'Your courses',
+  surname: 'Surname',
+  age: 'Your age',
+  city: 'City',
+  update: 'Update',
+  personalData: 'Personal data',
 };

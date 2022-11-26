@@ -40,7 +40,7 @@ const AdminForm: FC = () => {
             lessons: '',
             link: '',
             modules: '',
-            price: 'Від',
+            price: '',
             task: '',
             tests: '',
           }}

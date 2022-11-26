@@ -5,7 +5,7 @@ export const settingsValidation = yup.object().shape({
     .string()
     .min(2, 'Мінімум 2 символи')
     .max(15, 'Максимум 15 символів')
-    .matches(/^[0-9а-яА-ЯіІєЄїЇ'a-zA-Z\s]*$/gi, 'Укр.Англ букви та цифри'),
+    .matches(/^[0-9а-яА-ЯіІєЄїЇ'a-zA-Z\s]*$/gi, 'Тільки Укр та Англ букви'),
 
   email: yup
     .string()
@@ -17,7 +17,7 @@ export const settingsValidation = yup.object().shape({
     .string()
     .min(2, 'Мінімум 2 символи')
     .max(15, 'Максимум 15 символів')
-    .matches(/^[0-9а-яА-ЯіІєЄїЇ'a-zA-Z\s]*$/gi, 'Укр.Англ букви та цифри'),
+    .matches(/^[0-9а-яА-ЯіІєЄїЇ'a-zA-Z\s]*$/gi, 'Тільки Укр та Англ букви'),
   age: yup
     .string()
     .min(1, 'Мінімум 2 символи')
@@ -27,5 +27,5 @@ export const settingsValidation = yup.object().shape({
     .string()
     .min(2, 'Мінімум 2 символи')
     .max(25, 'Максимум 25 символів')
-    .matches(/^[а-яА-ЯіІєЄїЇ'a-zA-Z\s]*$/gi, 'Укр.Англ букви та цифри'),
+    .matches(/^[а-яА-ЯіІєЄїЇ'a-zA-Z\s]*$/gi, 'Тільки Укр та Англ букви'),
 });

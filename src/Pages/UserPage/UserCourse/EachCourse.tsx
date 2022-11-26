@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import ICoursesList from '../../../Types/courses-list-types';
 
+import { useTranslation } from 'react-i18next';
 import styles from './user-course.module.scss';
 
 interface IEachCourse {
@@ -8,6 +9,8 @@ interface IEachCourse {
 }
 
 const EachCourse: FC<IEachCourse> = ({ elem }) => {
+  const { t } = useTranslation();
+
   const { title, task, logo } = elem;
   const lessonArr = [
     {
@@ -36,8 +39,8 @@ const EachCourse: FC<IEachCourse> = ({ elem }) => {
         type=''
         aria-label='courselogo'
       />
-      <h3 className={styles.course__title}>{title}</h3>
-      <p className={styles.course__subtitle}>Заняття</p>
+      <h3 className={styles.course__title}>{t(title)}</h3>
+      <p className={styles.course__subtitle}>{t('lessons')}</p>
       <div>
         {lessonArr.map((item) => (
           <a
@@ -51,16 +54,13 @@ const EachCourse: FC<IEachCourse> = ({ elem }) => {
           </a>
         ))}
       </div>
-      <p className={styles.course__info}>
-        Заняття з викладачем відбувається індивідуально. Викладач сам визначає
-        час проведення та інформує про це студента за 5 днів.
-      </p>
+      <p className={styles.course__info}>{t('teacherLesson')}</p>
       <div className={styles.course__links}>
         <a target={'_blank'} href='https://www.youtube.com/' rel='noreferrer'>
-          Домашніх {task}
+          {t('homework')} {task}
         </a>
         <a target={'_blank'} href='https://www.youtube.com/' rel='noreferrer'>
-          Доповнення
+          {t('additional')}
         </a>
       </div>
     </div>

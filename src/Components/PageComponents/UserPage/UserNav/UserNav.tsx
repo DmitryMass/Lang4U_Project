@@ -9,12 +9,15 @@ import {
 } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import './user-nav.scss';
 
 const { Sider } = Layout;
 
 const UserNav: FC = () => {
+  const { t } = useTranslation();
+
   const [collapsed, setCollapsed] = useState(false);
   const [trigger, setTrigger] = useState(true);
 
@@ -60,7 +63,7 @@ const UserNav: FC = () => {
                   {collapsed ? (
                     <UserOutlined style={{ color: 'black' }} />
                   ) : (
-                    'Головна'
+                    `${t('userMainPage')}`
                   )}
                 </Link>
               ),
@@ -72,7 +75,7 @@ const UserNav: FC = () => {
                   {collapsed ? (
                     <BookOutlined style={{ color: 'black' }} />
                   ) : (
-                    'Курси'
+                    `${t('courses')}`
                   )}
                 </Link>
               ),
@@ -84,7 +87,7 @@ const UserNav: FC = () => {
                   {collapsed ? (
                     <SettingOutlined style={{ color: 'black' }} />
                   ) : (
-                    'Налаштування'
+                    `${t('userSettings')}`
                   )}
                 </Link>
               ),
