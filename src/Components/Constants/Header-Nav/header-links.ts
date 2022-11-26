@@ -8,7 +8,7 @@ export const headerLinks: IHeaderLinks[] = [
   },
   {
     link: ROUTES.ABOUTUS,
-    title: 'aboutUs',
+    title: 'about',
   },
   {
     link: ROUTES.CONTACTS,

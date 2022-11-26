@@ -1,4 +1,7 @@
 export const ua = {
+  // lang
+  ua: 'УКР',
+  eng: 'АНГЛ',
   // right
   rights: 'Всі права захищені',
   // general

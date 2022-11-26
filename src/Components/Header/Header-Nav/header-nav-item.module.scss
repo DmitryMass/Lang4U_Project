@@ -4,7 +4,7 @@
   @include text(16px, 24px, 500);
   position: relative;
   color: $black;
-  padding: 10px 15px;
+  padding: 10px 13px;
   transition: width 0.2s ease-in-out;
   &:hover {
     color: $black;
@@ -21,6 +21,20 @@
   }
   &:hover:after {
     transition: all 0.3s ease;
+    width: 100%;
+  }
+}
+
+.nav__item__active {
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: $green-border;
+    transition: width 0.2s ease-in-out;
     width: 100%;
   }
 }

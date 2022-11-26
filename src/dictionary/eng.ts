@@ -1,4 +1,7 @@
 export const eng = {
+  // lang
+  ua: 'UA',
+  eng: 'ENG',
   // right
   rights: 'All rights reserved',
   //general
@@ -7,7 +10,7 @@ export const eng = {
   wait: 'Wait please.',
   //
   courses: 'Courses',
-  aboutUs: 'About us',
+  aboutUs: 'About',
   contacts: 'Contacts',
   faq: 'FAQ',
   proposals: 'Proposals',

@@ -27,7 +27,6 @@ const Tabs: FC = () => {
             </Breadcrumb.Item>
           ) : null}
           {pathnames.map((name, index) => {
-            console.log(name);
             const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
             const isLast = index === pathnames.length - 1;
             return isLast ? (

@@ -1,0 +1,19 @@
+@import '../../../Styles/vars';
+
+.language__btns {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  @include flex-container(center, center, nowrap);
+  gap: 5px;
+}
+.language__btn {
+  @include flex-container(center, center, nowrap);
+  border: none;
+  @include text(14px, 18px, 500);
+  padding: 3px 15px;
+  border-radius: 4px;
+  background-color: $blue-border;
+  text-transform: uppercase;
+  color: $white;
+}

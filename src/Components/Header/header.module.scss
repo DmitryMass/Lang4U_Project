@@ -3,6 +3,7 @@
 .header {
   @include flex-container(space-between, center, nowrap);
   padding: 5px 0px;
+  position: relative;
 }
 
 .navigation__container {
