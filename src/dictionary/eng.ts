@@ -186,4 +186,12 @@ learning foreign languages.`,
   'Максимум 15 символів': 'Maximum 15 characters',
   "Ім'я обов'язкове поле": 'Name is a required field',
   'Тільки Укр та Англ букви': 'Only Ukrainian and English letters',
+  //   SUPPORT PAGE
+  supportSubtitle:
+    'If you have difficulties with the operation of the site, payment difficulties or have any questions, you can contact the support service, we will definitely help you.',
+  supportInfo: 'General information',
+  supportText:
+    'The clarity of our position is clear: consultation with a broad asset clearly defines each participant as capable of making their own decisions about the progress of the professional community. As already mentioned several times, the conclusions made on the basis of Internet analytics call us to new achievements, which, in turn, should be combined into whole clusters of their own kind. As only part of the big picture, the clear signs of the victory of institutionalization have been subjected to a whole series of independent studies.',
+  supportWrite: 'Write to the support service',
+  supportRequest: 'Leave a request and we will try to help you',
 };
