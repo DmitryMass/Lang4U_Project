@@ -199,4 +199,15 @@ learning foreign languages.`,
   faqBoxTitle: 'We are always happy to help!',
   faqBoxContact: 'Contact our student support team with any questions.',
   faqSendQuestion: 'Ask a question',
+
+  //   SUGGESTIONS (PROPOSALS) PAGE
+  suggestionTitle: 'Suggestions for the website',
+  suggestionSubtitle:
+    'We are always ready to become better! Have suggestions for improving the site? Write to us',
+  suggestionHere: 'Here we collect suggestions for improving Lang4U.',
+  suggestionIfProblem:
+    'If you encounter technical difficulties, please contact support',
+  suggestionWishes: 'Wishes for the development of Lang4U can be left here.',
+  suggestionWishesCourse:
+    'Requests for adding courses, materials, and articles to Lang4U can be left here.',
 };

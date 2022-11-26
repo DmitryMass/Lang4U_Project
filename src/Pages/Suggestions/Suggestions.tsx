@@ -3,10 +3,13 @@ import SupportForm from '../../Components/Form/Support/SupportForm';
 
 import SuggestionInfo from '../../Components/PageComponents/Suggestions/SuggestionInfo';
 import suggImg from '../../Assets/Images/suggestions.png';
+import { useTranslation } from 'react-i18next';
 
 import styles from './suggestions.module.scss';
 
 const Suggestions: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className={styles.suggestions}>
       <div className={styles.suggestions__container}>
@@ -17,11 +20,9 @@ const Suggestions: FC = () => {
           </div>
         </div>
         <div>
-          <h2 className={styles.suggestions__formTitle}>
-            Написати до служби підтримки
-          </h2>
+          <h2 className={styles.suggestions__formTitle}>{t('supportWrite')}</h2>
           <p className={styles.suggestions__formSubtitle}>
-            Залишіть заявку і ми постараємося вам допомогти
+            {t('supportRequest')}
           </p>
         </div>
         <SupportForm />
