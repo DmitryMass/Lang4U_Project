@@ -8,10 +8,12 @@ import { useSubmit } from '../useSubmit';
 import TypeButton from '../../Button/TypeButton/TypeButton';
 import Loader from '../../Loader/Loader';
 import AlertComponent from '../../Error/ErrorComponent';
+import { useTranslation } from 'react-i18next';
 
 import styles from '../auth-forms.module.scss';
 
 const LoginForm: FC = () => {
+  const { t } = useTranslation();
   const [login, { isLoading, isError }] = useLoginMutation();
   const { formikHandleLoginSubmit } = useSubmit(login);
 
@@ -26,17 +28,14 @@ const LoginForm: FC = () => {
           <form onSubmit={handleSubmit}>
             <div className={styles.form__inputWrapper}>
               {isError && (
-                <AlertComponent
-                  type='error'
-                  message='Помилка, спробуйте ще раз.'
-                />
+                <AlertComponent type='error' message={`${t('authError')}`} />
               )}
               <div className={styles.email__box}>
                 {errors.email && (
-                  <div className={styles.email__error}>{errors.email}</div>
+                  <div className={styles.email__error}>{t(errors.email)}</div>
                 )}
                 <label className={styles.email__label} htmlFor='email'>
-                  Пошта
+                  {t('email')}
                   <Field
                     className={styles.form__email}
                     id='email'
@@ -45,18 +44,18 @@ const LoginForm: FC = () => {
                     onBlur={handleBlur}
                     value={values.email}
                     name='email'
-                    placeholder='Ваша пошта'
+                    placeholder={`${t('emailPlaceholder')}`}
                   />
                 </label>
               </div>
               <div className={styles.password__box}>
                 {errors.password && (
                   <div className={styles.password__error}>
-                    {errors.password}
+                    {t(errors.password)}
                   </div>
                 )}
                 <label className={styles.password__label} htmlFor='password'>
-                  Пароль
+                  {t('password')}
                   <Field
                     className={styles.form__password}
                     id='password'
@@ -65,20 +64,20 @@ const LoginForm: FC = () => {
                     onBlur={handleBlur}
                     value={values.password}
                     name='password'
-                    placeholder='Пароль'
+                    placeholder={`${t('password')}`}
                   />
                 </label>
               </div>
             </div>
             <TypeButton modificator={'auth__btn'} type='submit'>
-              {isLoading ? <Loader /> : 'Увійти'}
+              {isLoading ? <Loader /> : `${t('signIn')}`}
             </TypeButton>
           </form>
         )}
       </Formik>
       <div className={styles.auth__account}>
-        <p className={styles.auth__text}>Немає аккаунту ?</p>
-        <Link to={ROUTES.REGISTRATION}>Зареєструватися</Link>
+        <p className={styles.auth__text}>{t('noAcc')}</p>
+        <Link to={ROUTES.REGISTRATION}>{t('signUp')}</Link>
       </div>
     </>
   );

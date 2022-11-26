@@ -127,6 +127,8 @@ export const eng = {
   'Мінімум 4 символи': 'Minimum 4 characters',
   'Максимум 30 символів': 'Maximum 30 characters',
   "Обов'язковий маркер": 'Required checkbox',
+  'Максимум 15 символів': 'Maximum 15 characters',
+
   //FAQ SECTION
   faqTitle: 'We answer frequently asked questions',
   ask: 'Ask a question',
@@ -183,7 +185,6 @@ learning foreign languages.`,
   leaveRequest: 'Leave a request',
   // support contacts form validation
   'Мінімум 2 символи': 'Minimum 2 characters',
-  'Максимум 15 символів': 'Maximum 15 characters',
   "Ім'я обов'язкове поле": 'Name is a required field',
   'Тільки Укр та Англ букви': 'Only Ukrainian and English letters',
   //   SUPPORT PAGE
@@ -210,4 +211,14 @@ learning foreign languages.`,
   suggestionWishes: 'Wishes for the development of Lang4U can be left here.',
   suggestionWishesCourse:
     'Requests for adding courses, materials, and articles to Lang4U can be left here.',
+
+  //   LOGIN REGISTRATION
+  loginTitle: 'Entrance to the сabinet',
+  authError: 'Error, try again.',
+  'Тільки англійські букви та цифри': 'English letters and numbers only',
+  'Підтвердіть пароль': 'Confirm password',
+  "Пароль обов'язкове поле": 'Password is a required field',
+  password: 'Password',
+  noAcc: "Don't have an account?",
+  signUp: 'Sign up',
 };
