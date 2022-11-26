@@ -170,4 +170,23 @@ export const ua = {
   germanTeacher: 'Викладач Німецької',
   spainTeacher: 'Викладач Іспанської',
   chinaTeacher: 'Викладач Китайської',
+  //   CONTACTS PAGE
+  contactsSubtitle: `Ми на зв'язку у будь-який зручний час`,
+  onThePhone: 'За телефоном',
+  onEmail: 'За електронною адресою',
+  onMessengers: 'В соцмережах',
+  help: 'Потрібна допомога із вибором курсу?',
+  helpSubtitle: 'Залишіть заявку і ми підберемо індивідуальне рішення',
+  supportName: `Ім'я`,
+  supportNamePlaceholder: `Ваше ім'я`,
+  supportEmailPlaceholder: 'Ваша пошта',
+  supportMessage: 'Повідомлення',
+  supportMessageDesc: `(не обов'язково)`,
+  supportMessagePlaceholder: 'Ваше питання',
+  leaveRequest: 'Залишити заявку',
+  // support contacts form validation
+  'Мінімум 2 символи': 'Мінімум 2 символи',
+  'Максимум 15 символів': 'Максимум 15 символів',
+  "Ім'я обов'язкове поле": "Ім'я обов'язкове поле",
+  'Тільки Укр та Англ букви': 'Тільки Укр та Англ букви',
 };

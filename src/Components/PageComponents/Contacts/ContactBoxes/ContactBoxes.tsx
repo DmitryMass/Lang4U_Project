@@ -5,10 +5,13 @@ import Messengers from '../../../Messengers/Messengers';
 import socnetwork from '../../../../Assets/Icons/socnetwork-contacts.svg';
 import email from '../../../../Assets/Icons/email-contacts.svg';
 import phone from '../../../../Assets/Icons/phone-contacts.svg';
+import { useTranslation } from 'react-i18next';
 
 import styles from './contact-boxes.module.scss';
 
 const ContactBoxes: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.boxes__container}>
       <div className={styles.box}>
@@ -19,7 +22,7 @@ const ContactBoxes: FC = () => {
           aria-label='svg'
         />
         <div>
-          <h4 className={styles.box__title}>За телефоном</h4>
+          <h4 className={styles.box__title}>{t('onThePhone')}</h4>
           <p className={styles.box__number}>+380 73 555 24 12</p>
         </div>
       </div>
@@ -31,7 +34,7 @@ const ContactBoxes: FC = () => {
           aria-label='svg'
         />
         <div>
-          <h4 className={styles.box__title}>За електронною адресою</h4>
+          <h4 className={styles.box__title}>{t('onEmail')}</h4>
           <a className={styles.box__link} href='some'>
             someAdress1@work.com
           </a>
@@ -48,7 +51,7 @@ const ContactBoxes: FC = () => {
           aria-label='svg'
         />
         <div>
-          <h4 className={styles.box__title}>В соц. мережах</h4>
+          <h4 className={styles.box__title}>{t('onMessengers')}</h4>
           <div className={styles.box__messengers}>
             <Messengers modificator='contacts' />
           </div>
