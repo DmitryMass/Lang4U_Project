@@ -148,4 +148,23 @@ learning foreign languages.`,
   Німецька: 'German',
   Іспанська: 'Spain',
   Китайська: 'China',
+  //   ABOUT US PAGE
+  aboutSubtitle: 'Speak easily - live freely!',
+  aboutFirstTitle: 'interactive online foreign language school',
+  aboutFirstDesc: `This is a new fully automated platform that will help you learn the language for work, study or communication.
+  Our system will allow you to master a foreign language in a dynamic game form, to think and speak freely, to build proposals, to maintain a conversation in any society and in any life situation.`,
+  aboutSecondTitle: `For those who want to build their own lives and pursue dreams!`,
+  aboutSecondDesc:
+    'Our school is suitable for schoolchildren and students, businessmen and travelers, ambitious entrepreneurs and resourceful emigrants. We will give you the basics and solid knowledge of foreign languages in a short time and in a convenient place.',
+  aboutThirdTitle: 'differs from classical language courses',
+  aboutThirdDesc:
+    'It is a clear, not boring and fully interactive system! You yourself choose where, how and how much to exercise. It will suit everyone who wants to qualitatively change their life in a short period of time, everyone who is ready to look for new opportunities with a new language!',
+  teacherTitle:
+    'The courses were created by professional philologists and teachers',
+  teacherSubtitle:
+    'Native speakers, teachers of foreign universities who have worked for many years, including in Ukraine, have methods of teaching their language as a foreign language and know very well the nuances of teaching in the Ukrainian environment.',
+  engTeacher: 'English teacher',
+  spainTeacher: 'Spanish teacher',
+  germanTeacher: 'German teacher',
+  chinaTeacher: 'Chinese teacher',
 };

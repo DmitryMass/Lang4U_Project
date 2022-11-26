@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import teacher from '../../../Assets/Images/teacher.png';
 import MainTitle from '../../../Components/Text/Titles/MainTitle';
+import { useTranslation } from 'react-i18next';
 
 import styles from './teachers.module.scss';
 
@@ -11,18 +12,13 @@ interface ITeacherBox {
 }
 
 const Teachers: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
       <div className={styles.teacher__titleBox}>
-        <MainTitle modificator='contacts__title'>
-          Курси створили професійні філологи та педагоги
-        </MainTitle>
-        <p className={styles.teachers__subtitle}>
-          Носії мови, викладачі зарубіжних університетів, які багато років
-          працюють у тому числі і в Україні, володіють методиками викладання
-          своєї мови, як іноземної та чудово знають нюанси викладання саме в
-          українському середовищі.
-        </p>
+        <MainTitle modificator='contacts__title'>{t('teacherTitle')}</MainTitle>
+        <p className={styles.teachers__subtitle}>{t('teacherSubtitle')}</p>
       </div>
       <div className={styles.teacher__box}>
         {teachersBox.map((item) => (
@@ -31,7 +27,7 @@ const Teachers: FC = () => {
               <img src={item.img as string} alt='teacher' />
             </div>
             <h3 className={styles.item__teacher__name}>{item.teacher}</h3>
-            <p className={styles.item__teacher__lang}>{item.lang}</p>
+            <p className={styles.item__teacher__lang}>{t(item.lang)}</p>
           </div>
         ))}
       </div>
@@ -43,22 +39,22 @@ const teachersBox: ITeacherBox[] = [
   {
     teacher: 'James Mc.Gill',
     img: `${teacher}`,
-    lang: 'Викладач Англійської',
+    lang: 'engTeacher',
   },
   {
     teacher: 'Jone Mc.Gonacal',
     img: `${teacher}`,
-    lang: 'Викладач Німецької',
+    lang: 'germanTeacher',
   },
   {
     teacher: 'Iren Recolday',
     img: `${teacher}`,
-    lang: 'Викладач Іспанської',
+    lang: 'spainTeacher',
   },
   {
     teacher: 'Mindjou Chunshen',
     img: `${teacher}`,
-    lang: 'Викладач Китайської',
+    lang: 'chinaTeacher',
   },
 ];
 
